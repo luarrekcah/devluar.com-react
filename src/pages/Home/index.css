@@ -1,5 +1,9 @@
 /* APP HEADERS */
 
+p {
+  color: white;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;
@@ -18,11 +22,11 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: '#fff';
 }
 
 .App-link {
-  color: #01afed;
+  color: #7c0e0e;
 }
 
 /* DEFAULTS */
@@ -65,5 +69,5 @@ footer {
 }
 
 .social-icons:hover {
-  color: #01afed;
+  color: #7c0e0e;
 }
