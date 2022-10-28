@@ -1,7 +1,7 @@
 import React from "react";
 
 import logo from "../../assets/logo.png";
-import foto from "../../assets/raul.jpg";
+import foto from "../../assets/foto.png";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
