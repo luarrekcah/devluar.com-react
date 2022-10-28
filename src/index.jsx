@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import {
   BrowserRouter,
   Routes,
@@ -14,15 +14,17 @@ import { sendToVercelAnalytics } from './utils/vercel/vitals';
 
 import Home from './pages/Home/index.jsx';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 reportWebVitals(sendToVercelAnalytics);
