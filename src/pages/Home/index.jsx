@@ -13,6 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import Projects from "./components/Projects";
 
 const Home = () => {
   const notify = () =>
@@ -105,11 +106,11 @@ const Home = () => {
               </p>
               <p>
                 Experiência em linguagens de programação, marcação e bibliotecas
-                conhecidas, como: JavaScript, Python, C, Bootstrap, Express,
-                React Native, Discord.js, Venom-bot, Twit, Node.js, Passport,
-                Firebase Database, EJS, HTML, CSS e Stripe. Em softwares de
-                manipulação vetorial e bitmap, experiência em: CorelDRAW e
-                Photoshop.
+                conhecidas, como: <b>JavaScript, Python, C, Bootstrap, Express,
+                React Native, Next.js, ReactJS, NuxtJS, Discord.js, Venom-bot, Twit, Node.js, Passport,
+                Firebase Database, EJS, HTML, CSS e Stripe</b>. Em softwares de
+                manipulação vetorial e bitmap, experiência em: <b>CorelDRAW e
+                Photoshop.</b>
               </p>
             </div>
           </Container>
@@ -117,7 +118,7 @@ const Home = () => {
         <div className="section dark">
           <Container id="projetos">
             <h1>Projetos</h1>
-            <p>COMING SOON</p>
+            <Projects />
           </Container>
         </div>
       </main>

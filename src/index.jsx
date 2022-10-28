@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 
 import './index.css';
+import "react-multi-carousel/lib/styles.css";
+
 import reportWebVitals from './utils/vercel/reportWebVitals';
 import { sendToVercelAnalytics } from './utils/vercel/vitals';
 
