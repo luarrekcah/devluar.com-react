@@ -1,6 +1,5 @@
 import React from "react";
 
-import logo from "../../assets/logo.png";
 import foto from "../../assets/foto.png";
 
 import "./index.css";
@@ -44,16 +43,11 @@ const Home = () => {
       >
         <header
           className="App-header"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.77)" }}
         >
           <ToastContainer />
           <Container>
-            <Image
-              alt="logo"
-              src={logo}
-              style={{ width: 200, marginBottom: 50 }}
-            />
-            <h1>Raul Rodrigues</h1>
+            <h1 style={{fontSize: '3rem', paddingBottom: 0}}>Eu sou Raul Rodrigues</h1>
             <TypeAnimation
               sequence={[
                 "Designer Gráfico",
@@ -67,6 +61,7 @@ const Home = () => {
               ]}
               speed={50}
               wrapper="p"
+              style={{fontWeight: 'bold', fontSize: '2rem', color: '#939593'}}
               repeat={Infinity}
             />
             <Stack gap={2} className="col-md-5 mx-auto">
