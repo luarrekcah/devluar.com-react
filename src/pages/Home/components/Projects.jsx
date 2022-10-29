@@ -129,7 +129,7 @@ const Projects = () => {
       <Carousel responsive={responsive} autoPlay={!isMobile ? true : false} infinite>
         {data.map((i) => {
           return (
-            <Card style={{ width: "18rem", backgroundColor: "#282c34", marginLeft:"auto",marginRight:"auto"}}>
+            <Card key={i.title} style={{ width: "18rem", backgroundColor: "#282c34", marginLeft:"auto",marginRight:"auto"}}>
               <Card.Img variant="top" src={i.img} />
               <Card.Body>
                 <Card.Title>{i.title}</Card.Title>

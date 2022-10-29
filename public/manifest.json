@@ -1,9 +1,10 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Raul Rodrigues",
+  "name": "RR - Raul Rodrigues",
+  "description": "Site sobre o desenvolvedor e designer Raul Rodrigues.",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "faviconn.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
@@ -18,8 +19,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": "/",
+  "display": "fullscreen",
+  "theme_color": "#B5090F",
+  "background_color": "#000000"
 }
