@@ -25,6 +25,7 @@ const LuarzitoNavbar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+            <Nav.Link href="#servicos">Serviços</Nav.Link>
             <Nav.Link href="#projetos">Projetos</Nav.Link>
             <Nav.Link href="#sobre">Sobre</Nav.Link>
           </Nav>

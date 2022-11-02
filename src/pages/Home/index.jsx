@@ -13,6 +13,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Projects from "./components/Projects";
 import Partners from "./components/Partners";
+import Services from "./components/Services";
 
 const Home = () => {
   const notify = () =>
@@ -121,7 +122,11 @@ const Home = () => {
           </Container>
         </div>
 
-        <div className="section">
+        <div id="servicos" className="section">
+          <h1>Serviços</h1>
+          <Services />
+        </div>
+        <div className="section dark">
           <h1>Parceiros</h1>
           <Partners />
         </div>
