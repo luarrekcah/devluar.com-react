@@ -71,7 +71,7 @@ const Projects = () => {
     },
     {
       img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1035346356279193640/github.jpg",
+        "https://cdn.discordapp.com/attachments/883779286719422534/1037418146501501100/unknown.png",
       title: "D | Walt Gestão: Empresa",
       description:
         "Site para gestão de projetos solares, essa ferramenta é destinada aos donos das empresas cadastradas na plataforma. Possibilita o registro de clientes, funcionários e projetos solares.",
@@ -85,7 +85,7 @@ const Projects = () => {
       description:
         "Aplicativo para gestão de projetos solares, essa ferramenta é destinada aos funcionários das empresas cadastradas na plataforma D Walt Gestão Empresa.",
       techs: "React Native e dependentes",
-      link: "https://gestao.dlwalt.com",
+      link: "https://play.google.com/store/apps/details?id=com.dlwalt.equipe",
     },
     {
       img:
@@ -94,7 +94,7 @@ const Projects = () => {
       description:
         "Aplicativo para gestão de projetos solares, essa ferramenta é destinada aos clientes das empresas cadastradas na plataforma D Walt Gestão Empresa.",
       techs: "React Native e dependentes",
-      link: "https://gestao.dlwalt.com",
+      link: "https://play.google.com/store/apps/details?id=com.dlwalt.cliente",
     },
     {
       img:
