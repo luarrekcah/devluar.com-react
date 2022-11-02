@@ -68,7 +68,7 @@ const Home = () => {
               repeat={Infinity}
             />
             <Stack gap={2} className="col-md-5 mx-auto">
-              <Button variant="danger" href="https://+556892402096">
+              <Button variant="danger" href="https://wa.me/+556892402096">
                 Contato
               </Button>
               <Button variant="outline-danger" href="#projetos">
