@@ -13,6 +13,7 @@ import reportWebVitals from './utils/vercel/reportWebVitals';
 import { sendToVercelAnalytics } from './utils/vercel/vitals';
 
 import Home from './pages/Home/index.jsx';
+import NotFound from './pages/NotFound';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -22,6 +23,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

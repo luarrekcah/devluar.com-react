@@ -1,30 +1,102 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  color: white;
+}
+
+h1 {
+  padding-bottom: 40px;
+  color: white;
+}
+
+main {
+  background-color: #282c34;
+}
+
+/* APP HEADERS */
+
+.App {
+  text-align: center;
+  background-color: #282c34;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: "#fff";
+}
+
+.App-link {
+  color: #7c0e0e;
+}
+
+/* DEFAULTS */
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-body::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: #F5F5F5;
+/* MIDDLE */
+
+.section {
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-body::-webkit-scrollbar
-{
-	width: 6px;
-	background-color: #F5F5F5;
+.dark {
+  background-color: #16191f;
 }
 
-body::-webkit-scrollbar-thumb
-{
-	background-color: #ff0000;
+/* SCROOL */
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+  background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ff0000;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: #282c34;
+  color: white;
+  padding: 40px;
+}
+
+.social-icons {
+  color: white;
+  font-size: 30px;
+  margin: 20px;
+}
+
+.social-icons:hover {
+  color: #7c0e0e;
 }

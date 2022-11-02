@@ -2,7 +2,6 @@ import React from "react";
 
 import foto from "../../assets/foto.png";
 
-import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -81,7 +80,6 @@ const Home = () => {
       <main>
         <div className="section dark">
           <Container id="sobre">
-            <h1>Biografia</h1>
             <Image
               alt="foto de Raul Rodrigues de Moraes"
               src={foto}
@@ -126,10 +124,6 @@ const Home = () => {
         <div className="section">
           <h1>Parceiros</h1>
           <Partners />
-        </div>
-
-        <div className="section dark">
-          <h1>Contato</h1>
         </div>
       </main>
       <Footer />
