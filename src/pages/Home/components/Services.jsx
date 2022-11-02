@@ -2,7 +2,9 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faUser, faRegistered, faPenToSquare, faFolder, faArrowAltCircleUp } from "@fortawesome/free-regular-svg-icons";
+
+import { faAndroid } from "@fortawesome/free-brands-svg-icons";
 
 const Services = () => {
   return (
@@ -26,7 +28,7 @@ const Services = () => {
             <div>
               <div className="icon-services">
                 <h2>
-                  <FontAwesomeIcon icon={faUser} />
+                  <FontAwesomeIcon icon={faPenToSquare} />
                 </h2>
               </div>
               <h3>DESIGN GRÁFICO</h3>
@@ -39,7 +41,7 @@ const Services = () => {
             <div>
               <div className="icon-services">
                 <h2>
-                  <FontAwesomeIcon icon={faUser} />
+                  <FontAwesomeIcon icon={faAndroid} />
                 </h2>
               </div>
               <h3>CRIAÇÃO DE APLICATIVOS</h3>
@@ -54,7 +56,7 @@ const Services = () => {
             <div>
               <div className="icon-services">
                 <h2>
-                  <FontAwesomeIcon icon={faUser} />
+                  <FontAwesomeIcon icon={faRegistered} />
                 </h2>
               </div>
               <h3>ASSESSORIA DE EMPRESAS</h3>
@@ -67,7 +69,7 @@ const Services = () => {
             <div>
               <div className="icon-services">
                 <h2>
-                  <FontAwesomeIcon icon={faUser} />
+                  <FontAwesomeIcon icon={faFolder} />
                 </h2>
               </div>
               <h3>PACOTES DE MÍDIA SOCIAL</h3>
@@ -80,7 +82,7 @@ const Services = () => {
             <div>
               <div className="icon-services">
                 <h2>
-                  <FontAwesomeIcon icon={faUser} />
+                  <FontAwesomeIcon icon={faArrowAltCircleUp} />
                 </h2>
               </div>
               <h3>E MUITO MAIS!</h3>
