@@ -27,7 +27,7 @@ const Partners = () => {
 
   const data = [
     {
-        src: 'https://cdn.glitch.global/55ea3463-31d7-4807-9eee-98d4f54e9d89/genios-art.png?v=1650419087328',
+        src: 'https://cdn.discordapp.com/attachments/883779286719422534/1037412733697667182/genios.png',
         alt: 'Gênios logo'
     },
     {
@@ -41,6 +41,10 @@ const Partners = () => {
     {
         src: 'https://cdn.glitch.global/55ea3463-31d7-4807-9eee-98d4f54e9d89/inovart.png?v=1650419087329',
         alt: 'Inovart logo'
+    },
+    {
+      src: 'https://cdn.discordapp.com/attachments/883779286719422534/1037413192768421958/celeiro.png',
+      alt: 'Celeiro Country logo'
     }
   ];
 

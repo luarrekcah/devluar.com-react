@@ -106,12 +106,12 @@ const Projects = () => {
     },
     {
       img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1035346356279193640/github.jpg",
+        "https://cdn.discordapp.com/attachments/883779286719422534/1037409499029442600/unknown.png",
       title: "MeCard",
       description:
         "Site com cards, para aqueles que desejam ter um tipo de perfil social, com diversos links, em um site, de forma bonita e elegante.",
       techs: "Node.js, express, EJS e dependentes",
-      link: "https://me-card.glitch.me",
+      link: "https://me-card.glitch.me/@/raul",
     },
     {
       img:
