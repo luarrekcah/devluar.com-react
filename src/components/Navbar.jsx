@@ -30,7 +30,10 @@ const LuarzitoNavbar = () => {
             <Nav.Link href="#sobre">Sobre</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="https://wa.me/+556892402096">
+            <Nav.Link  href="https://www.elo7.com.br/devluar">
+              Loja
+            </Nav.Link>
+            <Nav.Link  href="https://wa.me/+556892402096">
               <FontAwesomeIcon icon={faWhatsapp} /> Contato
             </Nav.Link>
           </Nav>
