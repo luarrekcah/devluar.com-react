@@ -13,6 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Projects from "./components/Projects";
+import Partners from "./components/Partners";
 
 const Home = () => {
   const notify = () =>
@@ -47,7 +48,9 @@ const Home = () => {
         >
           <ToastContainer />
           <Container>
-            <h1 style={{fontSize: '3rem', paddingBottom: 0}}>Eu sou Raul Rodrigues</h1>
+            <h1 style={{ fontSize: "3rem", paddingBottom: 0 }}>
+              Eu sou Raul Rodrigues
+            </h1>
             <TypeAnimation
               sequence={[
                 "Designer Gráfico",
@@ -61,7 +64,7 @@ const Home = () => {
               ]}
               speed={50}
               wrapper="p"
-              style={{fontWeight: 'bold', fontSize: '2rem', color: '#939593'}}
+              style={{ fontWeight: "bold", fontSize: "2rem", color: "#939593" }}
               repeat={Infinity}
             />
             <Stack gap={2} className="col-md-5 mx-auto">
@@ -87,7 +90,7 @@ const Home = () => {
               style={{ width: 400, marginBottom: 20 }}
             />
             <h1>Sobre</h1>
-            <div style={{textJustify: 'auto'}}>
+            <div style={{ textJustify: "auto" }}>
               <p>
                 Raul Rodrigues de Moraes, mais conhecido na internet como Luar
                 Rekcah é um designer e desenvolvedor.
@@ -101,11 +104,14 @@ const Home = () => {
               </p>
               <p>
                 Experiência em linguagens de programação, marcação e bibliotecas
-                conhecidas, como: <b>JavaScript, Python, C, Bootstrap, Express,
-                React Native, Next.js, ReactJS, NuxtJS, Discord.js, Venom-bot, Twit, Node.js, Passport,
-                Firebase Database, EJS, HTML, CSS e Stripe</b>. Em softwares de
-                manipulação vetorial e bitmap, experiência em: <b>CorelDRAW e
-                Photoshop.</b>
+                conhecidas, como:{" "}
+                <b>
+                  JavaScript, Python, C, Bootstrap, Express, React Native,
+                  Next.js, ReactJS, NuxtJS, Discord.js, Venom-bot, Twit,
+                  Node.js, Passport, Firebase Database, EJS, HTML, CSS e Stripe
+                </b>
+                . Em softwares de manipulação vetorial e bitmap, experiência em:{" "}
+                <b>CorelDRAW e Photoshop.</b>
               </p>
             </div>
           </Container>
@@ -115,6 +121,15 @@ const Home = () => {
             <h1>Projetos</h1>
             <Projects />
           </Container>
+        </div>
+
+        <div className="section">
+          <h1>Parceiros</h1>
+          <Partners />
+        </div>
+
+        <div className="section dark">
+          <h1>Contato</h1>
         </div>
       </main>
       <Footer />
