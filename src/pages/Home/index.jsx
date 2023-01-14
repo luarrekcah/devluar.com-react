@@ -9,7 +9,7 @@ import { Button, Stack, Container, Image } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
 import { ToastContainer, toast } from "react-toastify";
 
-import Navbar from "../../components/Navbar";
+import RNavbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Projects from "./components/Projects";
 import Partners from "./components/Partners";
@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <div className="App">
-      <Navbar />
+      <RNavbar />
       <div
         style={{
           backgroundImage:

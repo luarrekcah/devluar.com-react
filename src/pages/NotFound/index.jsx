@@ -6,8 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { Container } from "react-bootstrap";
 import { toast } from "react-toastify";
 
-import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import RNavbar from "../../components/Navbar";
 
 const NotFound = () => {
   const notify = () =>
@@ -26,7 +26,7 @@ const NotFound = () => {
 
   return (
     <div className="App">
-      <Navbar />
+      <RNavbar />
       <main>
         <header
           className="App-header"

@@ -14,6 +14,7 @@ import { sendToVercelAnalytics } from './utils/vercel/vitals';
 
 import Home from './pages/Home/index.jsx';
 import NotFound from './pages/NotFound';
+import Store from './pages/Store';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -23,6 +24,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/loja" element={<Store />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

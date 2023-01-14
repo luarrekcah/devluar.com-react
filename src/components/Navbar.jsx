@@ -8,26 +8,25 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 import logo from "../assets/logo.png";
 
-const LuarzitoNavbar = () => {
+const RNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/#home">
           <img
             src={logo}
             width="37"
             height="30"
             className="d-inline-block align-top"
             alt="Raul Rodrigues Logo"
-          />{" "}
-          Raul Rodrigues
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#servicos">Serviços</Nav.Link>
-            <Nav.Link href="#projetos">Projetos</Nav.Link>
-            <Nav.Link href="#sobre">Sobre</Nav.Link>
+            <Nav.Link href="/#servicos">Serviços</Nav.Link>
+            <Nav.Link href="/#projetos">Projetos</Nav.Link>
+            <Nav.Link href="/#sobre">Sobre</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link  href="https://www.elo7.com.br/devluar">
@@ -43,4 +42,4 @@ const LuarzitoNavbar = () => {
   );
 };
 
-export default LuarzitoNavbar;
+export default RNavbar;
