@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import React from "react";
-import { Button, Col, Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 
 const ProductTabs = () => {
@@ -173,19 +173,6 @@ const ProductTabs = () => {
             );
           })}
         </Carousel>
-      </Container>
-      <Container style={{ padding: 50, borderWidth: 10, borderColor: '#fff' }}>
-        <Row>
-          <Col>
-            <Typography variant="h6">Não achou o que procurava?</Typography>
-            <Typography variant="p">Solicite seu orçamento no WhatsApp e tenha seu arquivo em até 2 horas.</Typography>
-          </Col>
-          <Col>
-            <Button variant="danger" style={{ width: "100%", heigth: "100%" }}>
-              Whatsapp
-            </Button>
-          </Col>
-        </Row>
       </Container>
     </div>
   );
