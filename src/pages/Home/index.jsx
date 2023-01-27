@@ -91,26 +91,21 @@ const Home = () => {
             <h1>Sobre</h1>
             <div style={{ textJustify: "auto" }}>
               <p>
-                Raul Rodrigues de Moraes, mais conhecido na internet como Luar
-                Rekcah é um designer e desenvolvedor.
+                Raul Rodrigues de Moraes, conhecido como Luar Rekcah, é um profissional altamente capacitado na área de design e desenvolvimento web.
               </p>
               <p>
-                Começou sua carreira na D Walt Engenharia como Designer Gráfico
-                e desenvolvedor web full stack, logo sendo promovido a Diretor
-                de Marketing gerenciando publicações, Google ADS e outros.
-                Realizando o desenvolvimento e manutenção do site, fora
-                tecnologias restantes para atividades específicas.
+                Iniciou sua carreira na empresa D Walt Engenharia como Designer Gráfico e desenvolvedor web full stack, tendo sido rapidamente promovido a Diretor de Marketing, onde gerenciava publicações, campanhas de Google ADS e outras atividades relacionadas. Durante sua carreira, tem se destacado pelo desenvolvimento e manutenção de sites, além de dominar tecnologias específicas para tarefas relacionadas.
               </p>
               <p>
-                Experiência em linguagens de programação, marcação e bibliotecas
-                conhecidas, como:{" "}
+                Luar Rekcah possui ampla experiência em linguagens de programação, marcação e bibliotecas, tais como:{" "}
                 <b>
                   JavaScript, Python, C, Bootstrap, Express, React Native,
                   Next.js, ReactJS, NuxtJS, Discord.js, Venom-bot, Twit,
                   Node.js, Passport, Firebase Database, EJS, HTML, CSS e Stripe
                 </b>
-                . Em softwares de manipulação vetorial e bitmap, experiência em:{" "}
+                . Além disso, possui habilidades avançadas em softwares de manipulação vetorial e bitmap, como:
                 <b>CorelDRAW e Photoshop.</b>
+                Ele é considerado um especialista em sua área e sempre se mantém atualizado com as tendências e tecnologias mais recentes.
               </p>
             </div>
           </Container>
