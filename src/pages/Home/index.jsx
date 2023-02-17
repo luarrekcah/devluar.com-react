@@ -20,7 +20,7 @@ const Home = () => {
     toast("🚀 Bem vindo(a)!", {
       toastId: "first",
       position: "top-right",
-      autoClose: 2500,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -112,14 +112,14 @@ const Home = () => {
               <Col>
                 <h1>Sobre</h1>
                 <div style={{ textJustify: "auto" }}>
-                  <p>
+                  <p style={{ textAlign: "right" }}>
                     Raul Rodrigues de Moraes, conhecido como Luar Rekcah, é um
                     profissional altamente capacitado na área de design e
                     desenvolvimento web. Durante sua carreira, tem se destacado
                     pelo desenvolvimento e manutenção de sites, além de dominar
                     tecnologias específicas para tarefas relacionadas.
                   </p>
-                  <p>
+                  <p style={{ textAlign: "right" }}>
                     Raul possui ampla experiência em linguagens de programação,
                     marcação e bibliotecas, tais como:{" "}
                     <b>
@@ -132,10 +132,9 @@ const Home = () => {
                 </div>
               </Col>
             </Row>
-            <p>
+            <p style={{ textAlign: "left" }}>
               Além disso, possui habilidades avançadas em softwares de
-              manipulação vetorial e bitmap, como:
-              <b>CorelDRAW e Photoshop.</b>
+              manipulação vetorial e bitmap, como: <b>CorelDRAW e Photoshop.</b>{" "}
               Ele é considerado um especialista em sua área e sempre se mantém
               atualizado com as tendências e tecnologias mais recentes.
             </p>
@@ -152,10 +151,10 @@ const Home = () => {
           <h1>Serviços</h1>
           <Services />
         </div>
-        <div className="section dark">
+        {/*<div className="section dark">
           <h1>Parceiros</h1>
           <Partners />
-        </div>
+          </div>*/}
       </main>
       <Footer />
     </div>

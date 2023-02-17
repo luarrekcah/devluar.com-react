@@ -17,7 +17,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="dark">
       <div>Raul Rodrigues &#169; 2022</div>
         <a className="social-icons" href="https://github.com/luarrekcah">
           <FontAwesomeIcon icon={faGithub} />
