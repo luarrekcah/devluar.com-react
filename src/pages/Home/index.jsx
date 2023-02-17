@@ -99,39 +99,34 @@ const Home = () => {
       <main>
         <div className="section dark">
           <Container id="sobre">
-            <Row>
-              <Col>
-                <Image
-                  alt="foto de Raul Rodrigues de Moraes"
-                  src={foto}
-                  rounded
-                  fluid
-                  style={{ width: 400, marginBottom: 20 }}
-                />
-              </Col>
-              <Col>
-                <h1>Sobre</h1>
-                <div style={{ textJustify: "auto" }}>
-                  <p style={{ textAlign: "right" }}>
-                    Raul Rodrigues de Moraes, conhecido como Luar Rekcah, é um
-                    profissional altamente capacitado na área de design e
-                    desenvolvimento web. Durante sua carreira, tem se destacado
-                    pelo desenvolvimento e manutenção de sites, além de dominar
-                    tecnologias específicas para tarefas relacionadas.
-                  </p>
-                  <p style={{ textAlign: "right" }}>
-                    Raul possui ampla experiência em linguagens de programação,
-                    marcação e bibliotecas, tais como:{" "}
-                    <b>
-                      JavaScript, Typescript, Python, C, Bootstrap, Express,
-                      React Native, Next.js, ReactJS, NuxtJS, Discord.js,
-                      Venom-bot, Twit, Node.js, Passport, Firebase Database,
-                      EJS, HTML, CSS, Asaas e Stripe.
-                    </b>
-                  </p>
-                </div>
-              </Col>
-            </Row>
+            <Image
+              alt="foto de Raul Rodrigues de Moraes"
+              src={foto}
+              rounded
+              fluid
+              style={{ width: 400, marginBottom: 20 }}
+            />
+            <h1>Sobre</h1>
+            <div style={{ textJustify: "auto" }}>
+              <p style={{ textAlign: "left" }}>
+                Raul Rodrigues de Moraes, conhecido como Luar Rekcah, é um
+                profissional altamente capacitado na área de design e
+                desenvolvimento web. Durante sua carreira, tem se destacado pelo
+                desenvolvimento e manutenção de sites, além de dominar
+                tecnologias específicas para tarefas relacionadas.
+              </p>
+              <p style={{ textAlign: "left" }}>
+                Raul possui ampla experiência em linguagens de programação,
+                marcação e bibliotecas, tais como:{" "}
+                <b>
+                  JavaScript, Typescript, Python, C, Bootstrap, Express, React
+                  Native, Next.js, ReactJS, NuxtJS, Discord.js, Venom-bot, Twit,
+                  Node.js, Passport, Firebase Database, EJS, HTML, CSS, Asaas e
+                  Stripe.
+                </b>
+              </p>
+            </div>
+
             <p style={{ textAlign: "left" }}>
               Além disso, possui habilidades avançadas em softwares de
               manipulação vetorial e bitmap, como: <b>CorelDRAW e Photoshop.</b>{" "}
