@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import { Card, Button } from "react-bootstrap";
+import CardProject from "../../../components/CardProject";
 
 const Projects = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -25,11 +25,11 @@ const Projects = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 3,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 2,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -43,13 +43,35 @@ const Projects = () => {
 
   const data = [
     {
-      img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1035339172115918948/Sem_titulo-1.jpg",
+      img: "/gifs/dlwalt.gif",
       title: "D | WALT ENGENHARIA",
       description:
         "Site principal informativo sobre a empresa, com informações, desrições e até mesmo loja.",
       techs: "Node.js, Express, EJS e dependentes",
       link: "https://www.dlwalt.com",
+    },
+    {
+      img: "/gifs/advhiago.gif",
+      title: "Adv. Hiago B. Trindade",
+      description: "Landing page",
+      techs: "html, css e js",
+      link: "https://advhiago.com",
+    },
+    {
+      img:
+        "/gifs/genios.gif",
+      title: "Gênios",
+      description: "Site da Agência Gênios",
+      techs: "Node.js, express, EJS e dependentes",
+      link: "https://agenciagenios.com",
+    },
+    {
+      img: "/gifs/connect.gif",
+      title: "D | Walt Connect: Empresa",
+      description:
+        "Site para gestão de projetos solares, essa ferramenta é destinada aos donos das empresas cadastradas na plataforma. Possibilita o registro de clientes, funcionários e projetos solares.",
+      techs: "Node.js, Express, EJS e dependentes",
+      link: "https://connect.dlwalt.com",
     },
     {
       img:
@@ -61,22 +83,22 @@ const Projects = () => {
       link: "#",
     },
     {
-      img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1035343386347057323/Sem_titulo-1.jpg",
+      img: "/gifs/luarzito.gif",
       title: "Luarzito: Um simples bot para o Discord",
       description:
         "Bot de Discord bem estruturado e com diversos comandos de entretenimento ao usuário",
       techs: "Node.js, Discord.js e dependentes",
       link: "https://luarzito.devluar.com",
     },
+
     {
       img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1037418146501501100/unknown.png",
-      title: "D | Walt Gestão: Empresa",
+        "/gifs/mecard.gif",
+      title: "MeCard",
       description:
-        "Site para gestão de projetos solares, essa ferramenta é destinada aos donos das empresas cadastradas na plataforma. Possibilita o registro de clientes, funcionários e projetos solares.",
-      techs: "Node.js, Express, EJS e dependentes",
-      link: "https://gestao.dlwalt.com",
+        "Site com cards, para aqueles que desejam ter um tipo de perfil social, com diversos links, em um site, de forma bonita e elegante.",
+      techs: "Node.js, express, EJS e dependentes",
+      link: "https://me-card.glitch.me/@/raul",
     },
     {
       img:
@@ -96,23 +118,7 @@ const Projects = () => {
       techs: "React Native e dependentes",
       link: "https://play.google.com/store/apps/details?id=com.dlwalt.cliente",
     },
-    {
-      img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1035344562249539584/Sem_titulo-1.jpg",
-      title: "Gênios",
-      description: "Site da Agência Gênios",
-      techs: "Node.js, express, EJS e dependentes",
-      link: "https://agenciagenios.com",
-    },
-    {
-      img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1037409499029442600/unknown.png",
-      title: "MeCard",
-      description:
-        "Site com cards, para aqueles que desejam ter um tipo de perfil social, com diversos links, em um site, de forma bonita e elegante.",
-      techs: "Node.js, express, EJS e dependentes",
-      link: "https://me-card.glitch.me/@/raul",
-    },
+
     {
       img:
         "https://cdn.discordapp.com/attachments/883779286719422534/1035346356279193640/github.jpg",
@@ -126,34 +132,20 @@ const Projects = () => {
 
   return (
     <div>
-      <Carousel responsive={responsive} autoPlay={!isMobile ? true : false} infinite>
+      <Carousel
+        responsive={responsive}
+        autoPlay={!isMobile ? true : false}
+        infinite
+      >
         {data.map((i) => {
           return (
-            <Card key={i.title} style={{ width: "18rem", backgroundColor: "#282c34", marginLeft:"auto",marginRight:"auto"}}>
-              <Card.Img variant="top" src={i.img} />
-              <Card.Body>
-                <Card.Title>{i.title}</Card.Title>
-                <Card.Text style={{ color: "#ababab" }}>
-                  {i.description}
-                </Card.Text>
-                <Card.Text
-                  style={{
-                    backgroundColor: "#16191f",
-                    borderRadius: 20,
-                    padding: 10,
-                  }}
-                >
-                  <code>{i.techs}</code>
-                </Card.Text>
-                <Button
-                  variant="danger"
-                  style={{ width: "100%" }}
-                  href={i.link}
-                >
-                  Ver projeto
-                </Button>
-              </Card.Body>
-            </Card>
+            <CardProject
+              key={i.title}
+              title={i.title}
+              description={i.description}
+              image={i.img}
+              link={i.link}
+            />
           );
         })}
       </Carousel>
