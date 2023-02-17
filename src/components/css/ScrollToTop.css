@@ -1,0 +1,24 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+  }
+  
+  .scroll-to-top-button {
+    background-color: black;
+    color: #ff0000;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(0);
+  }
+  
+  .scroll-to-top-button.visible {
+    transform: scale(1);
+  }
+  

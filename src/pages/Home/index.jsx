@@ -5,7 +5,7 @@ import foto from "../../assets/foto.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Button, Stack, Container, Image, Row, Col } from "react-bootstrap";
+import { Button, Stack, Container, Image} from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
 import { ToastContainer, toast } from "react-toastify";
 
