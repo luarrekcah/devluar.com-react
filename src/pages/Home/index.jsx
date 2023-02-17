@@ -12,7 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import RNavbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Projects from "./components/Projects";
-import Partners from "./components/Partners";
+//import Partners from "./components/Partners";
 import Services from "./components/Services";
 
 const Home = () => {
@@ -35,8 +35,7 @@ const Home = () => {
       <RNavbar />
       <div
         style={{
-          backgroundImage:
-            "url(https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif)",
+          backgroundImage: "url(/images/banner.jpg)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center center",
@@ -44,56 +43,59 @@ const Home = () => {
       >
         <header
           className="App-header"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.77)" }}
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.25)" }}
         >
           <ToastContainer />
-          <Container>
-            <h1 style={{ fontSize: "3rem", paddingBottom: 0 }}>
-              Eu sou Raul Rodrigues
-            </h1>
-            <TypeAnimation
-              sequence={[
-                "Designer Gráfico",
-                1000,
-                "Desenvolvedor web",
-                1000,
-                "Desenvolvedor android",
-                1000,
-                "Desenvolvedor windows",
-                1000,
-                "Desenvolvedor devops pleno",
-                1000,
-                "Freelancer",
-                1000,
-              ]}
-              speed={50}
-              wrapper="p"
-              style={{ fontWeight: "bold", fontSize: "2rem", color: "#939593" }}
-              repeat={Infinity}
-            />
-            <Stack gap={2} className="col-md-5 mx-auto">
-              <Row>
-                <Col>
-                  <Button
-                    style={{ width: 150 }}
-                    variant="danger"
-                    href="https://wa.me/+556892402096"
-                  >
-                    Contato
-                  </Button>
-                </Col>
-                <Col>
-                  <Button
-                    style={{ width: 150 }}
-                    variant="outline-danger"
-                    href="#projetos"
-                  >
-                    Projetos
-                  </Button>
-                </Col>
-              </Row>
-            </Stack>
-          </Container>
+        
+            <Container> 
+              <h1 style={{ fontSize: "3rem", paddingBottom: 0 }}>
+                Eu sou Raul Rodrigues
+              </h1>
+              <TypeAnimation
+                sequence={[
+                  "Designer Gráfico",
+                  1000,
+                  "Desenvolvedor web",
+                  1000,
+                  "Desenvolvedor android",
+                  1000,
+                  "Desenvolvedor windows",
+                  1000,
+                  "Desenvolvedor devops pleno",
+                  1000,
+                  "Freelancer",
+                  1000,
+                ]}
+                speed={50}
+                wrapper="p"
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "2rem",
+                  color: "#939593",
+                }}
+                repeat={Infinity}
+              />
+              <Stack gap={2} className="mx-auto">
+              
+                    <Button
+                      style={{ width: 300 }}
+                      variant="danger"
+                      href="https://wa.me/+556892402096"
+                    >
+                      Contato
+                    </Button>
+                
+                    <Button
+                      style={{ width: 300 }}
+                      variant="outline-danger"
+                      href="#projetos"
+                    >
+                      Projetos
+                    </Button>
+                
+              </Stack>
+            </Container>
+          
         </header>
       </div>
       <main>
