@@ -5,7 +5,7 @@ import foto from "../../assets/foto.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Button, Stack, Container, Image } from "react-bootstrap";
+import { Button, Stack, Container, Image, Row, Col } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -17,10 +17,10 @@ import Services from "./components/Services";
 
 const Home = () => {
   const notify = () =>
-    toast("🚀 Site em construção!", {
+    toast("🚀 Bem vindo(a)!", {
       toastId: "first",
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 2500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -55,9 +55,13 @@ const Home = () => {
               sequence={[
                 "Designer Gráfico",
                 1000,
-                "Desenvolvedor full stack web",
+                "Desenvolvedor web",
                 1000,
-                "Desenvolvedor full stack android",
+                "Desenvolvedor android",
+                1000,
+                "Desenvolvedor windows",
+                1000,
+                "Desenvolvedor devops pleno",
                 1000,
                 "Freelancer",
                 1000,
@@ -68,12 +72,26 @@ const Home = () => {
               repeat={Infinity}
             />
             <Stack gap={2} className="col-md-5 mx-auto">
-              <Button variant="danger" href="https://wa.me/+556892402096">
-                Contato
-              </Button>
-              <Button variant="outline-danger" href="#projetos">
-                Projetos
-              </Button>
+              <Row>
+                <Col>
+                  <Button
+                    style={{ width: 150 }}
+                    variant="danger"
+                    href="https://wa.me/+556892402096"
+                  >
+                    Contato
+                  </Button>
+                </Col>
+                <Col>
+                  <Button
+                    style={{ width: 150 }}
+                    variant="outline-danger"
+                    href="#projetos"
+                  >
+                    Projetos
+                  </Button>
+                </Col>
+              </Row>
             </Stack>
           </Container>
         </header>
@@ -81,33 +99,46 @@ const Home = () => {
       <main>
         <div className="section dark">
           <Container id="sobre">
-            <Image
-              alt="foto de Raul Rodrigues de Moraes"
-              src={foto}
-              rounded
-              fluid
-              style={{ width: 400, marginBottom: 20 }}
-            />
-            <h1>Sobre</h1>
-            <div style={{ textJustify: "auto" }}>
-              <p>
-                Raul Rodrigues de Moraes, conhecido como Luar Rekcah, é um profissional altamente capacitado na área de design e desenvolvimento web.
-              </p>
-              <p>
-                Durante sua carreira, tem se destacado pelo desenvolvimento e manutenção de sites, além de dominar tecnologias específicas para tarefas relacionadas.
-              </p>
-              <p>
-                Raul possui ampla experiência em linguagens de programação, marcação e bibliotecas, tais como:{" "}
-                <b>
-                  JavaScript, Typescript, Python, C, Bootstrap, Express, React Native,
-                  Next.js, ReactJS, NuxtJS, Discord.js, Venom-bot, Twit,
-                  Node.js, Passport, Firebase Database, EJS, HTML, CSS, Asaas e Stripe
-                </b>
-                . Além disso, possui habilidades avançadas em softwares de manipulação vetorial e bitmap, como:
-                <b>CorelDRAW e Photoshop.</b>
-                Ele é considerado um especialista em sua área e sempre se mantém atualizado com as tendências e tecnologias mais recentes.
-              </p>
-            </div>
+            <Row>
+              <Col>
+                <Image
+                  alt="foto de Raul Rodrigues de Moraes"
+                  src={foto}
+                  rounded
+                  fluid
+                  style={{ width: 400, marginBottom: 20 }}
+                />
+              </Col>
+              <Col>
+                <h1>Sobre</h1>
+                <div style={{ textJustify: "auto" }}>
+                  <p>
+                    Raul Rodrigues de Moraes, conhecido como Luar Rekcah, é um
+                    profissional altamente capacitado na área de design e
+                    desenvolvimento web. Durante sua carreira, tem se destacado
+                    pelo desenvolvimento e manutenção de sites, além de dominar
+                    tecnologias específicas para tarefas relacionadas.
+                  </p>
+                  <p>
+                    Raul possui ampla experiência em linguagens de programação,
+                    marcação e bibliotecas, tais como:{" "}
+                    <b>
+                      JavaScript, Typescript, Python, C, Bootstrap, Express,
+                      React Native, Next.js, ReactJS, NuxtJS, Discord.js,
+                      Venom-bot, Twit, Node.js, Passport, Firebase Database,
+                      EJS, HTML, CSS, Asaas e Stripe.
+                    </b>
+                  </p>
+                </div>
+              </Col>
+            </Row>
+            <p>
+              Além disso, possui habilidades avançadas em softwares de
+              manipulação vetorial e bitmap, como:
+              <b>CorelDRAW e Photoshop.</b>
+              Ele é considerado um especialista em sua área e sempre se mantém
+              atualizado com as tendências e tecnologias mais recentes.
+            </p>
           </Container>
         </div>
         <div className="section dark">
