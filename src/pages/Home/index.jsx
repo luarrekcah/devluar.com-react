@@ -94,14 +94,14 @@ const Home = () => {
                 Raul Rodrigues de Moraes, conhecido como Luar Rekcah, é um profissional altamente capacitado na área de design e desenvolvimento web.
               </p>
               <p>
-                Iniciou sua carreira na empresa D Walt Engenharia como Designer Gráfico e desenvolvedor web full stack, tendo sido rapidamente promovido a Diretor de Marketing, onde gerenciava publicações, campanhas de Google ADS e outras atividades relacionadas. Durante sua carreira, tem se destacado pelo desenvolvimento e manutenção de sites, além de dominar tecnologias específicas para tarefas relacionadas.
+                Durante sua carreira, tem se destacado pelo desenvolvimento e manutenção de sites, além de dominar tecnologias específicas para tarefas relacionadas.
               </p>
               <p>
-                Luar Rekcah possui ampla experiência em linguagens de programação, marcação e bibliotecas, tais como:{" "}
+                Raul possui ampla experiência em linguagens de programação, marcação e bibliotecas, tais como:{" "}
                 <b>
-                  JavaScript, Python, C, Bootstrap, Express, React Native,
+                  JavaScript, Typescript, Python, C, Bootstrap, Express, React Native,
                   Next.js, ReactJS, NuxtJS, Discord.js, Venom-bot, Twit,
-                  Node.js, Passport, Firebase Database, EJS, HTML, CSS e Stripe
+                  Node.js, Passport, Firebase Database, EJS, HTML, CSS, Asaas e Stripe
                 </b>
                 . Além disso, possui habilidades avançadas em softwares de manipulação vetorial e bitmap, como:
                 <b>CorelDRAW e Photoshop.</b>
