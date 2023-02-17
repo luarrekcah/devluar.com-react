@@ -34,7 +34,7 @@ main {
 /* APP HEADERS */
 
 .App {
-  text-align: left;
+  text-align: center;
   background-color: #282c34;
 }
 
@@ -44,6 +44,7 @@ main {
 }
 
 .App-header {
+  text-align: left;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
