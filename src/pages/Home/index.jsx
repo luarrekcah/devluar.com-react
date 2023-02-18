@@ -14,6 +14,7 @@ import Footer from "../../components/Footer";
 import Projects from "./components/Projects";
 //import Partners from "./components/Partners";
 import Services from "./components/Services";
+import FormContact from "./components/FormContact";
 
 const Home = () => {
   const notify = () =>
@@ -99,7 +100,7 @@ const Home = () => {
         </header>
       </div>
       <main>
-        <div className="section dark">
+        <div className="section">
           <Container id="sobre">
             <Image
               alt="foto de Raul Rodrigues de Moraes"
@@ -139,14 +140,32 @@ const Home = () => {
         </div>
         <div className="section dark">
           <Container id="projetos">
-            <h1>Projetos</h1>
+            <h1>Projetos de Programação</h1>
             <Projects />
           </Container>
         </div>
 
-        <div id="servicos" className="section">
+        <div className="section">
+          <Container id="projetos">
+            <h1>Projetos Gráficos</h1>
+            <Button
+                      style={{ width: 300 }}
+                      variant="outline-danger"
+                      href="https://www.instagram.com/stories/highlights/17880780830438083/"
+                      target='_blank'
+                    >
+                      Ver no Instagram
+                    </Button>
+          </Container>
+        </div>
+
+        <div id="servicos" className="section dark">
           <h1>Serviços</h1>
           <Services />
+        </div>
+        <div id="servicos" className="section">
+          <h1>Contato</h1>
+          <FormContact />
         </div>
         {/*<div className="section dark">
           <h1>Parceiros</h1>

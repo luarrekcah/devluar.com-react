@@ -73,6 +73,23 @@ const Projects = () => {
       techs: "Node.js, Express, EJS e dependentes",
       link: "https://connect.dlwalt.com",
     },
+    
+    {
+      img: "/gifs/prospectweb.gif",
+      title: "Prospect",
+      description:
+        "Landing Page para o Aplicativo Windows Prospect",
+      techs: "electron",
+      link: "https://prospect.dlwalt.com",
+    },
+    {
+      img: "/gifs/prospectwin.gif",
+      title: "Prospect Windows",
+      description:
+        "Programa windows para acesso ao bot Prospect",
+      techs: "electron",
+      link: "https://prospect.dlwalt.com",
+    },
     {
       img:
         "https://cdn.discordapp.com/attachments/883779286719422534/1035340313356681326/Sem_titulo-1.jpg",
