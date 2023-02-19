@@ -15,6 +15,10 @@ const FormContact = () => {
   return (
     <Container>
       <Row>
+      <Col md={6} style={{marginBottom: 20}}>
+          <h3>Solicite seu orçamento agora mesmo!</h3>
+          <p>Conheça mais do meu trabalho nas minhas redes sociais.</p>
+        </Col>
         <Col md={6}>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formName">
@@ -32,10 +36,7 @@ const FormContact = () => {
             </Button>
           </Form>
         </Col>
-        <Col md={6}>
-          <h3>Solicite seu orçamento agora mesmo!</h3>
-          <p>Conheça mais do meu trabalho nas minhas redes sociais.</p>
-        </Col>
+       
       </Row>
     </Container>
   );

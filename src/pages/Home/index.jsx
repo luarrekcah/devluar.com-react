@@ -62,6 +62,8 @@ const Home = () => {
                   1000,
                   "Desenvolvedor windows",
                   1000,
+                  "Desenvolvedor de chatbots",
+                  1000,
                   "Desenvolvedor devops pleno",
                   1000,
                   "Freelancer",
