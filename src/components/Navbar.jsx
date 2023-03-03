@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, Container, Button, NavDropdown } from "react-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -83,6 +83,10 @@ const RNavbar = () => {
               <Nav.Link href="/#projetos">Projetos</Nav.Link>
               <Nav.Link href="/#servicos">Serviços</Nav.Link>
               <Nav.Link href="https://www.elo7.com.br/devluar">Loja</Nav.Link>
+              <NavDropdown title="Curriculum" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/curriculo.pdf">English</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">Português (não disp)</NavDropdown.Item>
+            </NavDropdown>
               <Nav.Link href="https://wa.me/+556892402096">
                 <Button
                   variant="outline-danger"
