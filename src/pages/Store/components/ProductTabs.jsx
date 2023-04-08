@@ -10,28 +10,59 @@ import {
   Container,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
+import axios from "axios";
 
-const ProductTabs = () => {
-  const [value, setValue] = React.useState(0);
-  const [width, setWidth] = React.useState(window.innerWidth);
+const ProductTabs = ({ onOpenModal }) => {
+  const [value, setValue] = useState(0);
+  const [category, setCategory] = useState("Design Gráfico");
+  const [width, setWidth] = useState(window.innerWidth);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+    switch (newValue) {
+      case 0:
+        setCategory("Design Gráfico");
+        break;
+      case 1:
+        setCategory("Software");
+        break;
+      case 2:
+        setCategory("Pacote");
+        break;
+      case 3:
+        setCategory("Ferramenta");
+        break;
+      case 4:
+        setCategory("Outros");
+        break;
+    }
+  };
 
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
+    axios
+      .get("https://api.devluar.com/getproducts")
+      .then((response) => {
+        setProducts(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     window.addEventListener("resize", handleWindowSizeChange);
     return () => {
       window.removeEventListener("resize", handleWindowSizeChange);
     };
   }, []);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
     ({ theme }) => ({
@@ -74,7 +105,6 @@ const ProductTabs = () => {
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 4,
     },
@@ -92,90 +122,85 @@ const ProductTabs = () => {
     },
   };
 
-  const data = [
-    {
-      image:
-        "http://d2r9epyceweg5n.cloudfront.net/stores/001/669/748/products/flyer1-0e830f136490111c1716264629846765-640-0.png",
-      title: "AA",
-      desc: "AA",
-    },
-    {
-      image:
-        "http://d2r9epyceweg5n.cloudfront.net/stores/001/669/748/products/flyer1-0e830f136490111c1716264629846765-640-0.png",
-      title: "AA",
-      desc: "AA",
-    },
-    {
-      image:
-        "http://d2r9epyceweg5n.cloudfront.net/stores/001/669/748/products/flyer1-0e830f136490111c1716264629846765-640-0.png",
-      title: "AA",
-      desc: "AA",
-    },
-    {
-      image:
-        "http://d2r9epyceweg5n.cloudfront.net/stores/001/669/748/products/flyer1-0e830f136490111c1716264629846765-640-0.png",
-      title: "AA",
-      desc: "AA",
-    },
-  ];
-
-  return (
-    <div>
-      <Box>
-        <StyledTabs value={value} onChange={handleChange} centered>
-          <StyledTab label="Novos" />
-          <StyledTab label="Top" />
-          <StyledTab label="Mais vendidos" />
-        </StyledTabs>
-      </Box>
-      <Container style={{ marginTop: 40 }}>
-        <Carousel
-          responsive={responsive}
-          autoPlay={!isMobile ? true : false}
-          infinite
-        >
-          {data.map((item, index) => {
-            return (
-              <Card
-                key={index}
-                sx={{ maxWidth: 345 }}
-                style={{
-                  width: "18rem",
-                  backgroundColor: "#282c34",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                }}
-              >
-                <CardMedia sx={{ height: 300 }} image={item.image} />
-                <CardContent>
-                  <Typography
-                    style={{ color: "#ababab" }}
-                    gutterBottom
-                    variant="h5"
-                    component="div"
+  if (loading) {
+    return (
+      <div>
+        <h1>Carregando...</h1>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <Box>
+          <StyledTabs value={value} onChange={handleChange} centered>
+            <StyledTab label="Design Gráfico" />
+            <StyledTab label="Software" />
+            <StyledTab label="Pacote" />
+            <StyledTab label="Ferramenta" />
+            <StyledTab label="Outros" />
+          </StyledTabs>
+        </Box>
+        <Container style={{ marginTop: 40 }}>
+          <Carousel
+            responsive={responsive}
+            autoPlay={!isMobile ? true : false}
+            infinite
+          >
+            {products
+              .filter((item) => item.data.categoria === category)
+              .map((item, index) => {
+                return (
+                  <Card
+                    key={index}
+                    sx={{ maxWidth: 345 }}
+                    style={{
+                      width: "18rem",
+                      backgroundColor: "#282c34",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
                   >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    style={{ color: "#fff" }}
-                    variant="body2"
-                    color="text.secondary"
-                  >
-                   <b>R$30,00</b>
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button variant="danger" style={{ width: "100%" }}>
-                    Comprar
-                  </Button>
-                </CardActions>
-              </Card>
-            );
-          })}
-        </Carousel>
-      </Container>
-    </div>
-  );
+                    <CardMedia sx={{ height: 300 }} image={item.data.image} />
+                    <CardContent>
+                      <Typography
+                        style={{ color: "#ababab" }}
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                      >
+                        {item.nome}
+                      </Typography>
+                      <Typography
+                        style={{ color: "#fff" }}
+                        variant="body2"
+                        color="text.secondary"
+                      >
+                        <b>
+                          R$
+                          <b style={{ fontSize: 18, marginLeft: 5 }}>
+                            {item.data.valor}
+                          </b>
+                        </b>
+                      </Typography>
+                      <p>{item.data.desc}</p>
+                    </CardContent>
+                    <CardActions>
+                      <Button
+                        variant="danger"
+                        style={{ width: "100%" }}
+                        onClick={() => onOpenModal(item)}
+                      >
+                        Comprar
+                      </Button>
+                    </CardActions>
+                  </Card>
+                );
+              })}
+          </Carousel>
+        </Container>
+      </div>
+    );
+  }
 };
 
 export default ProductTabs;

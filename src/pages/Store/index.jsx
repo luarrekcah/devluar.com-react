@@ -1,6 +1,15 @@
 import { Typography } from "@mui/material";
-import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import {
+  Button,
+  Col,
+  Container,
+  Form,
+  InputGroup,
+  Modal,
+  Row,
+} from "react-bootstrap";
+import axios from "axios";
 
 import { Container as MuiContainer } from "@mui/system";
 
@@ -12,6 +21,42 @@ import BreadCrumb from "./components/BreadCrumb";
 import ProductTabs from "./components/ProductTabs";
 
 const Store = () => {
+  const [showModalInfo, setShowModalInfo] = useState(false);
+
+  const [showModalQR, setShowModalQR] = useState(false);
+  const [paymentData, setPaymentData] = useState();
+
+  const [productInfo, setProductInfo] = useState(null);
+
+  const [email, setEmail] = useState("");
+
+  const handleCloseModal = () => setShowModalInfo(false);
+
+  const handleCloseModalQR = () => setShowModalQR(false);
+
+  const handleOpenModal = (product) => {
+    setProductInfo(product);
+    setShowModalInfo(true);
+  };
+
+  const preceedPayment = () => {
+    if (email === "" || !email.includes("@"))
+      return alert("Insira um e-mail válido");
+    setShowModalInfo(false);
+
+    axios
+      .post("https://api.devluar.com/payment/qrcode", {
+        email: email,
+        prodId: productInfo.key,
+      })
+      .then((r) => {
+        console.log(r.data);
+
+        setPaymentData(r.data);
+        setShowModalQR(true);
+      });
+  };
+
   return (
     <div className="App">
       <RNavbar />
@@ -23,14 +68,14 @@ const Store = () => {
       <main>
         <Container style={{ padding: 50 }}>
           <h1 style={{ fontSize: "2rem" }}>
-            Está procurando algum arquivo editável?
+            Está procurando algum arquivo editável ou software?
           </h1>
           <p>
             No meu site tem alguns, por um precinho super baixo, dá uma olhada!
           </p>
         </Container>
         <div className="section dark">
-          <ProductTabs />
+          <ProductTabs onOpenModal={handleOpenModal} />
         </div>
         <div className="section">
           <Container
@@ -54,10 +99,92 @@ const Store = () => {
         </div>
         <div className="section dark">
           <h2>Todos os produtos</h2>
-          <AllProducts />
+          <AllProducts onOpenModal={handleOpenModal} />
         </div>
       </main>
       <Footer />
+      <Modal show={showModalInfo} onHide={handleCloseModal}>
+        {productInfo && (
+          <>
+            <Modal.Header closeButton>
+              <Modal.Title>{productInfo.data.nome}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p style={{ color: "#000000" }}>
+                Descrição: {productInfo.data.desc}
+              </p>
+              <p style={{ color: "#000000" }}>
+                Preço: R${productInfo.data.valor}
+              </p>
+              <b style={{ color: "#000000" }}>
+                Informe seu e-mail para envio do produto:
+              </b>
+              <InputGroup className="mb-3">
+                <Form.Control
+                  type="email"
+                  placeholder="seunome@gmail.com"
+                  aria-label="E-mail"
+                  aria-describedby="basic-addon1"
+                  onChange={(event) => setEmail(event.target.value)}
+                  value={email}
+                />
+                <small>
+                  Após inserir seu e-mail e confirmar, um código QR irá aparecer
+                  juntamente com um pix copia e cola, quando seu pagamento for
+                  efetuado o seu produto será enviado no e-mail fornecido.
+                </small>
+              </InputGroup>
+              <Button
+                variant="success"
+                style={{ width: "100%" }}
+                onClick={() => preceedPayment()}
+              >
+                Prosseguir para pagamento
+              </Button>
+            </Modal.Body>
+          </>
+        )}
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Fechar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showModalQR} onHide={handleCloseModalQR}>
+        {productInfo && paymentData && (
+          <>
+            <Modal.Header closeButton>
+              <Modal.Title>Pagamento do Produto</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p style={{ color: "#000000" }}>
+                <b>Produto:</b> {productInfo.data.nome}
+              </p>
+              <img
+                src={`data:image/png;base64,${paymentData.encodedImage}`}
+                style={{ width: "100%" }}
+              />
+              <div>
+                <label>PIX Copia e cola</label>
+                <textarea
+                  rows="4"
+                  value={paymentData.payload}
+                  readOnly
+                  style={{ width: "100%" }}
+                  onClick={() =>
+                    navigator.clipboard.writeText(paymentData.payload)
+                  }
+                />
+              </div>
+              <small>
+                Ao efetuar o pagamento, aguarde alguns instantes para que você
+                receba sua confirmação, comprovante e o produto por e-mail.
+              </small>
+            </Modal.Body>
+          </>
+        )}
+      </Modal>
     </div>
   );
 };
