@@ -128,7 +128,17 @@ const ProductTabs = ({ onOpenModal }) => {
          <Spinner animation="border" variant="danger" />
       </div>
     );
-  } else {
+  }
+
+  if (products.length === 0) {
+    return (
+      <div>
+         <h1 style={{color: '#fff'}}>Nenhum produto registrado no momento.</h1>
+      </div>
+    );
+  }
+
+
     return (
       <div>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -193,7 +203,7 @@ const ProductTabs = ({ onOpenModal }) => {
         </Container>
       </div>
     );
-  }
+  
 };
 
 export default ProductTabs;

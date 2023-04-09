@@ -40,7 +40,17 @@ const AllProducts = ({onOpenModal}) => {
          <Spinner animation="border" variant="danger" />
       </div>
     );
-  } else {
+  } 
+
+  
+  if (products.length === 0) {
+    return (
+      <div>
+         <h1 style={{color: '#fff'}}>Nenhum produto registrado no momento.</h1>
+      </div>
+    );
+  }
+  
     return (
       <Container style={{ marginTop: 40 }}>
         <Grid
@@ -93,7 +103,7 @@ const AllProducts = ({onOpenModal}) => {
         
       </Container>
     );
-  }
+  
 };
 
 export default AllProducts;
