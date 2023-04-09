@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import React, { useEffect, useState } from "react";
-import { Badge, Button } from "react-bootstrap";
+import { Badge, Button, Spinner } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import axios from "axios";
 
@@ -125,7 +125,7 @@ const ProductTabs = ({ onOpenModal }) => {
   if (loading) {
     return (
       <div>
-        <h1>Carregando...</h1>
+         <Spinner animation="border" variant="danger" />
       </div>
     );
   } else {

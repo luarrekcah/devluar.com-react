@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import { Badge, Button } from "react-bootstrap";
+import { Badge, Button, Spinner } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
 
@@ -37,7 +37,7 @@ const AllProducts = ({onOpenModal}) => {
   if (loading) {
     return (
       <div>
-        <h1>Carregando...</h1>
+         <Spinner animation="border" variant="danger" />
       </div>
     );
   } else {
