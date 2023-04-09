@@ -18,7 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
 }));
 
-const AllProducts = ({onOpenModal}) => {
+const AllProducts = ({ onOpenModal }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -37,73 +37,70 @@ const AllProducts = ({onOpenModal}) => {
   if (loading) {
     return (
       <div>
-         <Spinner animation="border" variant="danger" />
-      </div>
-    );
-  } 
-
-  
-  if (products.length === 0) {
-    return (
-      <div>
-         <h1 style={{color: '#fff'}}>Nenhum produto registrado no momento.</h1>
+        <Spinner animation="border" variant="danger" />
       </div>
     );
   }
-  
+
+  if (products.length === 0) {
     return (
-      <Container style={{ marginTop: 40 }}>
-        <Grid
-          container
-          spacing={1}
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-        >
-          {products.map((item, index) => {
-            return (
-              <Item key={index}>
-                <Card
-                  sx={{ maxWidth: 345 }}
-                  style={{
-                    width: "18rem",
-                    backgroundColor: "#282c34",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                  }}
-                >
-                  <CardMedia sx={{ height: 300 }} image={item.data.image} />
-                  <CardContent style={{ color: "#fff" }}>
-                      <p>
-                        <Badge bg="danger">{item.data.categoria}</Badge>
-                      </p>
-                      <h4>{item.data.nome}</h4>
-                      <p style={{fontSize: 18}}>
-                        R$
-                        <b style={{ marginLeft: 2 }}>
-                          {item.data.valor}
-                        </b>
-                      </p>
-                      <p style={{color: '#adadad'}}>{item.data.desc}</p>
-                    </CardContent>
-                  <CardActions>
-                    <Button
-                      variant="danger"
-                      style={{ width: "100%" }}
-                      onClick={() => onOpenModal(item)}
-                    >
-                      Comprar
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Item>
-            );
-          })}
-        </Grid>
-        
-      </Container>
+      <div>
+        <h3 style={{ color: "#adadad" }}>
+          Nenhum produto registrado no momento.
+        </h3>
+      </div>
     );
-  
+  }
+
+  return (
+    <Container style={{ marginTop: 40 }}>
+      <Grid
+        container
+        spacing={1}
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        {products.map((item, index) => {
+          return (
+            <Item key={index}>
+              <Card
+                sx={{ maxWidth: 345 }}
+                style={{
+                  width: "18rem",
+                  backgroundColor: "#282c34",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              >
+                <CardMedia sx={{ height: 300 }} image={item.data.image} />
+                <CardContent style={{ color: "#fff" }}>
+                  <p>
+                    <Badge bg="danger">{item.data.categoria}</Badge>
+                  </p>
+                  <h4>{item.data.nome}</h4>
+                  <p style={{ fontSize: 18 }}>
+                    R$
+                    <b style={{ marginLeft: 2 }}>{item.data.valor}</b>
+                  </p>
+                  <p style={{ color: "#adadad" }}>{item.data.desc}</p>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    variant="danger"
+                    style={{ width: "100%" }}
+                    onClick={() => onOpenModal(item)}
+                  >
+                    Comprar
+                  </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          );
+        })}
+      </Grid>
+    </Container>
+  );
 };
 
 export default AllProducts;

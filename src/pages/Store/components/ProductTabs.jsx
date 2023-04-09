@@ -125,7 +125,7 @@ const ProductTabs = ({ onOpenModal }) => {
   if (loading) {
     return (
       <div>
-         <Spinner animation="border" variant="danger" />
+        <Spinner animation="border" variant="danger" />
       </div>
     );
   }
@@ -133,77 +133,77 @@ const ProductTabs = ({ onOpenModal }) => {
   if (products.length === 0) {
     return (
       <div>
-         <h1 style={{color: '#fff'}}>Nenhum produto registrado no momento.</h1>
+        <h3 style={{ color: "#adadad" }}>
+          Nenhum produto registrado no momento.
+        </h3>
       </div>
     );
   }
 
-
-    return (
-      <div>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <StyledTabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            indicatorColor="secondary"
-          >
-            <StyledTab label="Design Gráfico" />
-            <StyledTab label="Software" />
-            <StyledTab label="Pacote" />
-            <StyledTab label="Ferramenta" />
-            <StyledTab label="Outro" />
-          </StyledTabs>
-        </Box>
-        <Container style={{ marginTop: 40 }}>
-          <Carousel
-            responsive={responsive}
-            autoPlay={!isMobile ? true : false}
-            infinite
-          >
-            {products
-              .filter((item) => item.data.categoria === category)
-              .map((item, index) => {
-                return (
-                  <Card
-                    key={index}
-                    sx={{ maxWidth: 345 }}
-                    style={{
-                      width: "18rem",
-                      backgroundColor: "#282c34",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                    }}
-                  >
-                    <CardMedia sx={{ height: 300 }} image={item.data.image} />
-                    <CardContent style={{ color: "#fff" }}>
-                      <p>
-                        <Badge bg="danger">{item.data.categoria}</Badge>
-                      </p>
-                      <h4>{item.data.nome}</h4>
-                      <p style={{ fontSize: 18 }}>
-                        R$
-                        <b style={{ marginLeft: 2 }}>{item.data.valor}</b>
-                      </p>
-                      <p style={{ color: "#adadad" }}>{item.data.desc}</p>
-                    </CardContent>
-                    <CardActions>
-                      <Button
-                        variant="danger"
-                        style={{ width: "100%" }}
-                        onClick={() => onOpenModal(item)}
-                      >
-                        Comprar
-                      </Button>
-                    </CardActions>
-                  </Card>
-                );
-              })}
-          </Carousel>
-        </Container>
-      </div>
-    );
-  
+  return (
+    <div>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <StyledTabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          indicatorColor="secondary"
+        >
+          <StyledTab label="Design Gráfico" />
+          <StyledTab label="Software" />
+          <StyledTab label="Pacote" />
+          <StyledTab label="Ferramenta" />
+          <StyledTab label="Outro" />
+        </StyledTabs>
+      </Box>
+      <Container style={{ marginTop: 40 }}>
+        <Carousel
+          responsive={responsive}
+          autoPlay={!isMobile ? true : false}
+          infinite
+        >
+          {products
+            .filter((item) => item.data.categoria === category)
+            .map((item, index) => {
+              return (
+                <Card
+                  key={index}
+                  sx={{ maxWidth: 345 }}
+                  style={{
+                    width: "18rem",
+                    backgroundColor: "#282c34",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                  }}
+                >
+                  <CardMedia sx={{ height: 300 }} image={item.data.image} />
+                  <CardContent style={{ color: "#fff" }}>
+                    <p>
+                      <Badge bg="danger">{item.data.categoria}</Badge>
+                    </p>
+                    <h4>{item.data.nome}</h4>
+                    <p style={{ fontSize: 18 }}>
+                      R$
+                      <b style={{ marginLeft: 2 }}>{item.data.valor}</b>
+                    </p>
+                    <p style={{ color: "#adadad" }}>{item.data.desc}</p>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      variant="danger"
+                      style={{ width: "100%" }}
+                      onClick={() => onOpenModal(item)}
+                    >
+                      Comprar
+                    </Button>
+                  </CardActions>
+                </Card>
+              );
+            })}
+        </Carousel>
+      </Container>
+    </div>
+  );
 };
 
 export default ProductTabs;

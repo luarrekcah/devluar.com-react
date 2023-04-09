@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Col,
@@ -38,6 +38,7 @@ const Store = () => {
   const handleOpenModal = (product) => {
     setProductInfo(product);
     setShowModalInfo(true);
+    axios.get("https://api.devluar.com/");
   };
 
   const preceedPayment = () => {
@@ -67,7 +68,8 @@ const Store = () => {
 
         setPaymentData(r.data);
         setShowModalQR(true);
-      }).catch((error) => {
+      })
+      .catch((error) => {
         console.error(error);
         toast.error("Ocorreu um problema no sistema, tente mais tarde.", {
           toastId: "two",
@@ -82,6 +84,10 @@ const Store = () => {
         });
       });
   };
+
+  useEffect(() => {
+    axios.get("https://api.devluar.com/");
+  }, []);
 
   return (
     <div className="App">
@@ -205,8 +211,8 @@ const Store = () => {
                 />
               </div>
               <small>
-                Ao efetuar o pagamento, aguarde entre 1 e 2 minutos para que você
-                receba sua confirmação, comprovante e o produto por e-mail.
+                Ao efetuar o pagamento, aguarde entre 1 e 2 minutos para que
+                você receba sua confirmação, comprovante e o produto por e-mail.
               </small>
             </Modal.Body>
           </>
