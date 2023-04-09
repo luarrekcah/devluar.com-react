@@ -67,6 +67,19 @@ const Store = () => {
 
         setPaymentData(r.data);
         setShowModalQR(true);
+      }).catch((error) => {
+        console.error(error);
+        toast.error("Ocorreu um problema no sistema, tente mais tarde.", {
+          toastId: "two",
+          position: "top-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
       });
   };
 
