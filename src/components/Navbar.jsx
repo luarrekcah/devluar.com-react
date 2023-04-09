@@ -82,7 +82,7 @@ const RNavbar = () => {
               <Nav.Link href="/#sobre">Sobre</Nav.Link>
               <Nav.Link href="/#projetos">Projetos</Nav.Link>
               <Nav.Link href="/#servicos">Serviços</Nav.Link>
-              <Nav.Link href="https://www.elo7.com.br/devluar">Loja</Nav.Link>
+              <Nav.Link href="/loja">Loja</Nav.Link>
               <NavDropdown title="Curriculum" id="basic-nav-dropdown">
               <NavDropdown.Item target='_blank' href="https://firebasestorage.googleapis.com/v0/b/rrprojects-7fa25.appspot.com/o/pessoal%2Fcurriculo.pdf?alt=media&token=19ef3571-d8c8-4ada-a0bb-87ccb1a534c4">English</NavDropdown.Item>
             </NavDropdown>
