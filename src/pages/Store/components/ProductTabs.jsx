@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Badge, Button } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import axios from "axios";
 
@@ -38,7 +38,7 @@ const ProductTabs = ({ onOpenModal }) => {
         setCategory("Ferramenta");
         break;
       case 4:
-        setCategory("Outros");
+        setCategory("Outro");
         break;
     }
   };
@@ -131,13 +131,18 @@ const ProductTabs = ({ onOpenModal }) => {
   } else {
     return (
       <div>
-        <Box>
-          <StyledTabs value={value} onChange={handleChange} centered>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <StyledTabs
+            value={value}
+            onChange={handleChange}
+            variant="scrollable"
+            indicatorColor="secondary"
+          >
             <StyledTab label="Design Gráfico" />
             <StyledTab label="Software" />
             <StyledTab label="Pacote" />
             <StyledTab label="Ferramenta" />
-            <StyledTab label="Outros" />
+            <StyledTab label="Outro" />
           </StyledTabs>
         </Box>
         <Container style={{ marginTop: 40 }}>
@@ -161,28 +166,16 @@ const ProductTabs = ({ onOpenModal }) => {
                     }}
                   >
                     <CardMedia sx={{ height: 300 }} image={item.data.image} />
-                    <CardContent>
-                      <Typography
-                        style={{ color: "#ababab" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {item.nome}
-                      </Typography>
-                      <Typography
-                        style={{ color: "#fff" }}
-                        variant="body2"
-                        color="text.secondary"
-                      >
-                        <b>
-                          R$
-                          <b style={{ fontSize: 18, marginLeft: 5 }}>
-                            {item.data.valor}
-                          </b>
-                        </b>
-                      </Typography>
-                      <p>{item.data.desc}</p>
+                    <CardContent style={{ color: "#fff" }}>
+                      <p>
+                        <Badge bg="danger">{item.data.categoria}</Badge>
+                      </p>
+                      <h4>{item.data.nome}</h4>
+                      <p style={{ fontSize: 18 }}>
+                        R$
+                        <b style={{ marginLeft: 2 }}>{item.data.valor}</b>
+                      </p>
+                      <p style={{ color: "#adadad" }}>{item.data.desc}</p>
                     </CardContent>
                     <CardActions>
                       <Button

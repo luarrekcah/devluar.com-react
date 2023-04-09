@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Badge, Button } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
 
@@ -63,21 +63,19 @@ const AllProducts = ({onOpenModal}) => {
                   }}
                 >
                   <CardMedia sx={{ height: 300 }} image={item.data.image} />
-                  <CardContent>
-                    <Typography
-                      style={{ color: "#fff" }}
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      <b>
+                  <CardContent style={{ color: "#fff" }}>
+                      <p>
+                        <Badge bg="danger">{item.data.categoria}</Badge>
+                      </p>
+                      <h4>{item.data.nome}</h4>
+                      <p style={{fontSize: 18}}>
                         R$
-                        <b style={{ fontSize: 18, marginLeft: 5 }}>
+                        <b style={{ marginLeft: 2 }}>
                           {item.data.valor}
                         </b>
-                      </b>
-                    </Typography>
-                    <p>{item.data.desc}</p>
-                  </CardContent>
+                      </p>
+                      <p style={{color: '#adadad'}}>{item.data.desc}</p>
+                    </CardContent>
                   <CardActions>
                     <Button
                       variant="danger"
