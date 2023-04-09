@@ -134,6 +134,35 @@ const Store = () => {
           <h2>Todos os produtos</h2>
           <AllProducts onOpenModal={handleOpenModal} />
         </div>
+        <div className="section">
+          <Container style={{ padding: 50 }}>
+            <Row>
+              <Col>
+                <h2>
+                  COMPRA SEGURA
+                </h2>
+                <p>
+                  Na nossa loja, prezamos pela segurança e privacidade dos
+                  nossos clientes. Utilizamos tecnologias avançadas de
+                  criptografia para proteger as informações pessoais e
+                  financeiras dos nossos clientes.
+                </p>
+                <p>
+                  Quando você procede com o pagamento apartir do seu e-mail,
+                  criamos no nosso banco de dados uma referência dele com o
+                  produto desejado por isso quando você pagar, o sistema envia
+                  exatamente o produto que você pediu.
+                </p>
+
+                <p>
+                  Além disso, nosso suporte está sempre à disposição para
+                  esclarecer dúvidas e ajudar em qualquer etapa do processo de
+                  compra.
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </main>
       <Footer />
       <Modal show={showModalInfo} onHide={handleCloseModal}>
