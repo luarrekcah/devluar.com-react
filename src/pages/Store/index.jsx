@@ -19,6 +19,7 @@ import RNavbar from "../../components/Navbar";
 import AllProducts from "./components/AllProducts";
 import BreadCrumb from "./components/BreadCrumb";
 import ProductTabs from "./components/ProductTabs";
+import { toast, ToastContainer } from "react-toastify";
 
 const Store = () => {
   const [showModalInfo, setShowModalInfo] = useState(false);
@@ -44,6 +45,18 @@ const Store = () => {
       return alert("Insira um e-mail válido");
     setShowModalInfo(false);
 
+    toast.success("Gerando seu código QR, aguarde...", {
+      toastId: "two",
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
     axios
       .post("https://api.devluar.com/payment/qrcode", {
         email: email,
@@ -59,6 +72,7 @@ const Store = () => {
 
   return (
     <div className="App">
+      <ToastContainer />
       <RNavbar />
       <div className="section">
         <MuiContainer>
@@ -178,7 +192,7 @@ const Store = () => {
                 />
               </div>
               <small>
-                Ao efetuar o pagamento, aguarde alguns instantes para que você
+                Ao efetuar o pagamento, aguarde entre 1 e 2 minutos para que você
                 receba sua confirmação, comprovante e o produto por e-mail.
               </small>
             </Modal.Body>
