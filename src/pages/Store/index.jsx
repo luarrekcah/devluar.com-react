@@ -38,7 +38,6 @@ const Store = () => {
   const handleOpenModal = (product) => {
     setProductInfo(product);
     setShowModalInfo(true);
-    axios.get("https://api.devluar.com/");
   };
 
   const preceedPayment = () => {
@@ -84,10 +83,6 @@ const Store = () => {
         });
       });
   };
-
-  useEffect(() => {
-    axios.get("https://api.devluar.com/");
-  }, []);
 
   return (
     <div className="App">
