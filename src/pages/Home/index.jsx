@@ -5,7 +5,7 @@ import foto from "../../assets/foto.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Button, Stack, Container, Image} from "react-bootstrap";
+import { Button, Stack, Container, Image } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -47,58 +47,57 @@ const Home = () => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.25)" }}
         >
           <ToastContainer />
-        
-            <Container> 
-              <h1 style={{ fontSize: "3rem", paddingBottom: 0 }}>
-                Eu sou Raul Rodrigues
-              </h1>
-              <TypeAnimation
-                sequence={[
-                  "Designer Gráfico",
-                  1000,
-                  "Desenvolvedor web",
-                  1000,
-                  "Desenvolvedor android",
-                  1000,
-                  "Desenvolvedor windows",
-                  1000,
-                  "Desenvolvedor de chatbots",
-                  1000,
-                  "Desenvolvedor devops pleno",
-                  1000,
-                  "Freelancer",
-                  1000,
-                ]}
-                speed={50}
-                wrapper="p"
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "2rem",
-                  color: "#939593",
-                }}
-                repeat={Infinity}
-              />
-              <Stack gap={2} className="mx-auto">
-              
-                    <Button
-                      style={{ width: 300 }}
-                      variant="danger"
-                      href="https://wa.me/+556892402096"
-                    >
-                      Contato
-                    </Button>
-                
-                    <Button
-                      style={{ width: 300 }}
-                      variant="outline-danger"
-                      href="#projetos"
-                    >
-                      Projetos
-                    </Button>
-                
-              </Stack>
-            </Container>
-          
+
+          <Container>
+            <h1 style={{ fontSize: "3rem", paddingBottom: 0 }}>
+              Eu sou Raul Rodrigues
+            </h1>
+            <TypeAnimation
+              sequence={[
+                "Designer Gráfico",
+                1000,
+                "Desenvolvedor web",
+                1000,
+                "Desenvolvedor android",
+                1000,
+                "Desenvolvedor windows",
+                1000,
+                "Desenvolvedor linux",
+                1000,
+                "Desenvolvedor de chatbots",
+                1000,
+                "Desenvolvedor devops pleno",
+                1000,
+                "Freelancer",
+                1000,
+              ]}
+              speed={50}
+              wrapper="p"
+              style={{
+                fontWeight: "bold",
+                fontSize: "2rem",
+                color: "#939593",
+              }}
+              repeat={Infinity}
+            />
+            <Stack gap={2} className="mx-auto">
+              <Button
+                style={{ width: 300 }}
+                variant="danger"
+                href="https://wa.me/+556892402096"
+              >
+                Contato
+              </Button>
+
+              <Button
+                style={{ width: 300 }}
+                variant="outline-danger"
+                href="#projetos"
+              >
+                Projetos
+              </Button>
+            </Stack>
+          </Container>
         </header>
       </div>
       <main>
@@ -116,7 +115,7 @@ const Home = () => {
               <p style={{ textAlign: "left" }}>
                 Raul Rodrigues de Moraes, conhecido como Luar Rekcah, é um
                 profissional altamente capacitado na área de design e
-                desenvolvimento web. Durante sua carreira, tem se destacado pelo
+                desenvolvimento de sistemas. Durante sua carreira, tem se destacado pelo
                 desenvolvimento e manutenção de sites, além de dominar
                 tecnologias específicas para tarefas relacionadas.
               </p>
@@ -151,13 +150,13 @@ const Home = () => {
           <Container id="projetos">
             <h1>Projetos Gráficos</h1>
             <Button
-                      style={{ width: 300 }}
-                      variant="outline-danger"
-                      href="https://www.instagram.com/stories/highlights/17880780830438083/"
-                      target='_blank'
-                    >
-                      Ver no Instagram
-                    </Button>
+              style={{ width: 300 }}
+              variant="outline-danger"
+              href="https://www.instagram.com/stories/highlights/17880780830438083/"
+              target="_blank"
+            >
+              Ver no Instagram
+            </Button>
           </Container>
         </div>
 

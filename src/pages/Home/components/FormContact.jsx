@@ -31,7 +31,7 @@ const FormContact = () => {
               <Form.Control as="textarea" rows={3} placeholder="Digite sua mensagem" value={message} onChange={(e) => setMessage(e.target.value)} />
             </Form.Group>
 
-            <Button variant="primary" type="submit" style={{marginTop: 20, width: '100%'}}>
+            <Button variant="danger" type="submit" style={{marginTop: 20, width: '100%'}}>
               Enviar
             </Button>
           </Form>

@@ -73,7 +73,7 @@ const Services = () => {
                 </h2>
               </div>
               <h3>PACOTES DE MÍDIA SOCIAL</h3>
-              <p>Compra de seguidores, curtidas e visualizações em redes sociais.</p>
+              <p>Criação de conteúdo, publicações com legenda, sem que você precise dizer o que postar.</p>
             </div>
           </div>
           </Col>
