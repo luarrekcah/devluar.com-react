@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./css/CardProject.css";
+import Image from "next/image";
 
 const CardProject = ({ title, description, image, link }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -19,7 +20,7 @@ const CardProject = ({ title, description, image, link }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img src={image} alt={title} />
+      <Image src={image} alt={title} width={100} height={100}/>
       <div className={`card-overlay ${isHovered ? "active" : ""}`}>
         <h3>{title}</h3>
         <p>{description}</p>

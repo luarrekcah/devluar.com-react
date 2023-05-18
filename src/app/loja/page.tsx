@@ -22,6 +22,7 @@ import RNavbar from "../components/Navbar";
 import AllProducts from "./components/AllProducts";
 import BreadCrumb from "./components/BreadCrumb";
 import ProductTabs from "./components/ProductTabs";
+import Image from "next/image";
 
 
 export default function Store() {
@@ -221,7 +222,7 @@ export default function Store() {
                   <p style={{ color: "#000000" }}>
                     <b>Produto:</b> {productInfo.data.nome}
                   </p>
-                  <img
+                  <Image
                     src={`data:image/png;base64,${paymentData.encodedImage}`}
                     style={{ width: "100%" }}
                   />

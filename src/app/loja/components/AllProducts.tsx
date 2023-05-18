@@ -22,7 +22,7 @@ const AllProducts = ({ onOpenModal }) => {
 
   useEffect(() => {
     axios
-      .get("https://localhost:3000/api/v1/products/getAll")
+      .get("/api/v1/products/getAll")
       .then((response) => {
         setProducts(response.data);
         setLoading(false);

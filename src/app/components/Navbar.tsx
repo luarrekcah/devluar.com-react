@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 const RNavbar = () => {
   return (
@@ -65,7 +66,7 @@ const RNavbar = () => {
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/#home">
-            <img
+            <Image
               src={'/images/logo.png'}
               width="37"
               height="30"

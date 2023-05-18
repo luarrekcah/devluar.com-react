@@ -1,10 +1,12 @@
 import React, { memo, useCallback, useEffect, useState } from "react";
+import axios from "axios";
 import { Tab, Tabs, Box, Container } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Spinner } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
-import axios from "axios";
 import ProductItem from "./compsChild/ProductItem";
+
+import 'react-multi-carousel/lib/styles.css';
 
 const ProductTabs = ({ onOpenModal }) => {
   const [value, setValue] = useState(0);
@@ -36,7 +38,7 @@ const ProductTabs = ({ onOpenModal }) => {
 
   useEffect(() => {
     axios
-      .get("https://api.devluar.com/getproducts")
+      .get("/api/v1/products/getAll")
       .then((response) => {
         setProducts(response.data);
         setLoading(false);
