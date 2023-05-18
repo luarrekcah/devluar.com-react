@@ -225,6 +225,7 @@ export default function Store() {
                   <Image
                     src={`data:image/png;base64,${paymentData.encodedImage}`}
                     style={{ width: "100%" }}
+                    alt="QRCODE"
                   />
                   <div>
                     <label>PIX Copia e cola</label>
