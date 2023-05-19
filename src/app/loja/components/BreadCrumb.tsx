@@ -26,7 +26,7 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
 const BreadCrumb = () => {
   return (
     <Breadcrumbs aria-label="breadcrumb">
-      <Link underline="hover" color="inherit" href="/">
+      <Link underline="hover" color="#fff" href="/#">
         Página Principal
       </Link>
     </Breadcrumbs>
