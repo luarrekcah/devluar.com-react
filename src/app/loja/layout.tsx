@@ -8,7 +8,15 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Loja - Raul Rodrigues',
-  description: 'Compre artes vetoriais pelo preço mais acessível possível!',
+  description: 'Compre artes vetoriais, softwares e mais!',
+  openGraph: {
+    title: 'Loja - Raul Rodrigues',
+    description: 'Compre artes vetoriais, softwares e mais!',
+    url: 'https://www.devluar.com',
+    siteName: 'DevLuar',
+    locale: 'pt-BR',
+    type: 'website',
+  }
 }
 
 export default function RootLayout({
