@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Col,
@@ -24,14 +24,32 @@ import BreadCrumb from "./components/BreadCrumb";
 import ProductTabs from "./components/ProductTabs";
 import Image from "next/image";
 
+interface ProductProps {
+  key: string;
+  data: {
+    nome: string;
+    desc: string;
+    valor: number;
+  };
+}
 
 export default function Store() {
-    const [showModalInfo, setShowModalInfo] = useState(false);
+  const [showModalInfo, setShowModalInfo] = useState(false);
 
   const [showModalQR, setShowModalQR] = useState(false);
-  const [paymentData, setPaymentData] = useState();
+  const [paymentData, setPaymentData] = useState({
+    payload: "",
+    encodedImage: "",
+  });
 
-  const [productInfo, setProductInfo] = useState(null);
+  const [productInfo, setProductInfo] = useState({
+    key: "",
+    data: {
+      nome: "",
+      desc: "",
+      valor: 0,
+    },
+  });
 
   const [email, setEmail] = useState("");
 
@@ -39,7 +57,7 @@ export default function Store() {
 
   const handleCloseModalQR = () => setShowModalQR(false);
 
-  const handleOpenModal = (product) => {
+  const handleOpenModal = (product: ProductProps) => {
     setProductInfo(product);
     setShowModalInfo(true);
   };
@@ -64,7 +82,7 @@ export default function Store() {
     axios
       .post("https://api.devluar.com/payment/qrcode", {
         email: email,
-        prodId: productInfo.key,
+        prodId: productInfo?.key,
       })
       .then((r) => {
         console.log(r.data);
@@ -88,165 +106,163 @@ export default function Store() {
       });
   };
 
-    return (
-        <div className="App">
-          <ToastContainer />
-          <RNavbar />
-          <div className="section">
-            <MuiContainer>
-              <BreadCrumb />
-            </MuiContainer>
-          </div>
-          <main>
-            <Container style={{ padding: 50 }}>
-              <h1 style={{ fontSize: "2rem" }}>
-                Está procurando algum arquivo editável ou software?
-              </h1>
-              <p>
-                No meu site tem alguns, por um precinho super baixo, dá uma olhada!
-              </p>
-            </Container>
-            <div className="section dark">
-              <ProductTabs onOpenModal={handleOpenModal} />
-            </div>
-            <div className="section">
-              <Container
-                style={{ padding: 50, borderWidth: 10, borderColor: "#fff" }}
-              >
-                <Row>
-                  <Col>
-                    <Typography variant="h6">Não achou o que procurava?</Typography>
-                    <Typography variant="p">
-                      Solicite seu orçamento no WhatsApp e tenha seu arquivo em até
-                      2 horas.
-                    </Typography>
-                  </Col>
-                  <Col>
-                    <Button variant="danger" style={{ width: "100%" }}>
-                      Whatsapp
-                    </Button>
-                  </Col>
-                </Row>
-              </Container>
-            </div>
-            <div className="section dark">
-              <h2>Todos os produtos</h2>
-              <AllProducts onOpenModal={handleOpenModal} />
-            </div>
-            <div className="section">
-              <Container style={{ padding: 50 }}>
-                <Row>
-                  <Col>
-                    <h2>
-                      COMPRA SEGURA
-                    </h2>
-                    <p>
-                      Na nossa loja, prezamos pela segurança e privacidade dos
-                      nossos clientes. Utilizamos tecnologias avançadas de
-                      criptografia para proteger as informações pessoais e
-                      financeiras dos nossos clientes.
-                    </p>
-                    <p>
-                      Quando você procede com o pagamento a partir do seu e-mail,
-                      criamos no nosso banco de dados uma referência dele com o
-                      produto desejado por isso quando você pagar, o sistema envia
-                      exatamente o produto que você pediu.
-                    </p>
-    
-                    <p>
-                      Além disso, nosso suporte está sempre à disposição para
-                      esclarecer dúvidas e ajudar em qualquer etapa do processo de
-                      compra.
-                    </p>
-                  </Col>
-                </Row>
-              </Container>
-            </div>
-          </main>
-          <Footer />
-          <Modal show={showModalInfo} onHide={handleCloseModal}>
-            {productInfo && (
-              <>
-                <Modal.Header closeButton>
-                  <Modal.Title>{productInfo.data.nome}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <p style={{ color: "#000000" }}>
-                    Descrição: {productInfo.data.desc}
-                  </p>
-                  <p style={{ color: "#000000" }}>
-                    Preço: R${productInfo.data.valor}
-                  </p>
-                  <b style={{ color: "#000000" }}>
-                    Informe seu e-mail para envio do produto:
-                  </b>
-                  <InputGroup className="mb-3">
-                    <Form.Control
-                      type="email"
-                      placeholder="seunome@gmail.com"
-                      aria-label="E-mail"
-                      aria-describedby="basic-addon1"
-                      onChange={(event) => setEmail(event.target.value)}
-                      value={email}
-                    />
-                    <small>
-                      Após inserir seu e-mail e confirmar, um código QR irá aparecer
-                      juntamente com um pix copia e cola, quando seu pagamento for
-                      efetuado o seu produto será enviado no e-mail fornecido.
-                    </small>
-                  </InputGroup>
-                  <Button
-                    variant="success"
-                    style={{ width: "100%" }}
-                    onClick={() => preceedPayment()}
-                  >
-                    Prosseguir para pagamento
-                  </Button>
-                </Modal.Body>
-              </>
-            )}
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleCloseModal}>
-                Fechar
-              </Button>
-            </Modal.Footer>
-          </Modal>
-    
-          <Modal show={showModalQR} onHide={handleCloseModalQR}>
-            {productInfo && paymentData && (
-              <>
-                <Modal.Header closeButton>
-                  <Modal.Title>Pagamento do Produto</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <p style={{ color: "#000000" }}>
-                    <b>Produto:</b> {productInfo.data.nome}
-                  </p>
-                  <Image
-                    src={`data:image/png;base64,${paymentData.encodedImage}`}
-                    style={{ width: "100%" }}
-                    alt="QRCODE"
-                  />
-                  <div>
-                    <label>PIX Copia e cola</label>
-                    <textarea
-                      rows="4"
-                      value={paymentData.payload}
-                      readOnly
-                      style={{ width: "100%" }}
-                      onClick={() =>
-                        navigator.clipboard.writeText(paymentData.payload)
-                      }
-                    />
-                  </div>
-                  <small>
-                    Ao efetuar o pagamento, aguarde entre 1 e 2 minutos para que
-                    você receba sua confirmação, comprovante e o produto por e-mail.
-                  </small>
-                </Modal.Body>
-              </>
-            )}
-          </Modal>
+  return (
+    <div className="App">
+      <ToastContainer />
+      <RNavbar />
+      <div className="section">
+        <MuiContainer>
+          <BreadCrumb />
+        </MuiContainer>
+      </div>
+      <main>
+        <Container style={{ padding: 50 }}>
+          <h1 style={{ fontSize: "2rem" }}>
+            Está procurando algum arquivo editável ou software?
+          </h1>
+          <p>
+            No meu site tem alguns, por um precinho super baixo, dá uma olhada!
+          </p>
+        </Container>
+        <div className="section dark">
+          <ProductTabs onOpenModal={handleOpenModal} />
         </div>
-      );
+        <div className="section">
+          <Container
+            style={{ padding: 50, borderWidth: 10, borderColor: "#fff" }}
+          >
+            <Row>
+              <Col>
+                <Typography variant="h6">Não achou o que procurava?</Typography>
+                <Typography variant="body1">
+                  Solicite seu orçamento no WhatsApp e tenha seu arquivo em até
+                  2 horas.
+                </Typography>
+              </Col>
+              <Col>
+                <Button variant="danger" style={{ width: "100%" }}>
+                  Whatsapp
+                </Button>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <div className="section dark">
+          <h2>Todos os produtos</h2>
+          <AllProducts onOpenModal={handleOpenModal} />
+        </div>
+        <div className="section">
+          <Container style={{ padding: 50 }}>
+            <Row>
+              <Col>
+                <h2>COMPRA SEGURA</h2>
+                <p>
+                  Na nossa loja, prezamos pela segurança e privacidade dos
+                  nossos clientes. Utilizamos tecnologias avançadas de
+                  criptografia para proteger as informações pessoais e
+                  financeiras dos nossos clientes.
+                </p>
+                <p>
+                  Quando você procede com o pagamento a partir do seu e-mail,
+                  criamos no nosso banco de dados uma referência dele com o
+                  produto desejado por isso quando você pagar, o sistema envia
+                  exatamente o produto que você pediu.
+                </p>
+
+                <p>
+                  Além disso, nosso suporte está sempre à disposição para
+                  esclarecer dúvidas e ajudar em qualquer etapa do processo de
+                  compra.
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </main>
+      <Footer />
+      <Modal show={showModalInfo} onHide={handleCloseModal}>
+        {productInfo && (
+          <>
+            <Modal.Header closeButton>
+              <Modal.Title>{productInfo.data.nome}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p style={{ color: "#000000" }}>
+                Descrição: {productInfo.data.desc}
+              </p>
+              <p style={{ color: "#000000" }}>
+                Preço: R${productInfo.data.valor}
+              </p>
+              <b style={{ color: "#000000" }}>
+                Informe seu e-mail para envio do produto:
+              </b>
+              <InputGroup className="mb-3">
+                <Form.Control
+                  type="email"
+                  placeholder="seunome@gmail.com"
+                  aria-label="E-mail"
+                  aria-describedby="basic-addon1"
+                  onChange={(event) => setEmail(event.target.value)}
+                  value={email}
+                />
+                <small>
+                  Após inserir seu e-mail e confirmar, um código QR irá aparecer
+                  juntamente com um pix copia e cola, quando seu pagamento for
+                  efetuado o seu produto será enviado no e-mail fornecido.
+                </small>
+              </InputGroup>
+              <Button
+                variant="success"
+                style={{ width: "100%" }}
+                onClick={() => preceedPayment()}
+              >
+                Prosseguir para pagamento
+              </Button>
+            </Modal.Body>
+          </>
+        )}
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Fechar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showModalQR} onHide={handleCloseModalQR}>
+        {productInfo && paymentData && (
+          <>
+            <Modal.Header closeButton>
+              <Modal.Title>Pagamento do Produto</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p style={{ color: "#000000" }}>
+                <b>Produto:</b> {productInfo.data.nome}
+              </p>
+              <Image
+                src={`data:image/png;base64,${paymentData.encodedImage}`}
+                style={{ width: "100%" }}
+                alt="QRCODE"
+              />
+              <div>
+                <label>PIX Copia e cola</label>
+                <textarea
+                  rows={4}
+                  value={paymentData.payload}
+                  readOnly
+                  style={{ width: "100%" }}
+                  onClick={() =>
+                    navigator.clipboard.writeText(paymentData.payload)
+                  }
+                />
+              </div>
+              <small>
+                Ao efetuar o pagamento, aguarde entre 1 e 2 minutos para que
+                você receba sua confirmação, comprovante e o produto por e-mail.
+              </small>
+            </Modal.Body>
+          </>
+        )}
+      </Modal>
+    </div>
+  );
 }

@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export function sendProduct(to, filepath) {
+export function sendProduct(to: any, filepath: any) {
   if (
     !filepath ||
     filepath === "" ||
@@ -34,7 +34,7 @@ export function sendProduct(to, filepath) {
         html: `Clique no link para baixar o arquivo: <a href="${downloadURL}">BAIXAR ARQUIVO</a>`,
       };
 
-      transporter.sendMail(mailOptions, function (error, info) {
+      transporter.sendMail(mailOptions, function (error: any, info: any) {
         if (error) {
           console.error("[EMAIL] Error:", error);
           resolve(false);
@@ -43,7 +43,7 @@ export function sendProduct(to, filepath) {
           resolve(true);
         }
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error("[STORAGE] Error:", error);
       resolve(false);
     }

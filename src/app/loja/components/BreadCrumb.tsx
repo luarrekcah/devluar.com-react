@@ -1,5 +1,6 @@
+/* eslint-disable react/no-string-refs */
 import React from "react";
-import { Breadcrumbs, emphasize, styled, Chip } from "@mui/material";
+import { Breadcrumbs, emphasize, styled, Chip, Link } from "@mui/material";
 import { Home as HomeIcon } from "@mui/icons-material";
 
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
@@ -25,12 +26,9 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
 const BreadCrumb = () => {
   return (
     <Breadcrumbs aria-label="breadcrumb">
-      <StyledBreadcrumb
-        component="a"
-        href="/"
-        label="Página Principal"
-        icon={<HomeIcon fontSize="small" />}
-      />
+      <Link underline="hover" color="inherit" href="/">
+        Página Principal
+      </Link>
     </Breadcrumbs>
   );
 };

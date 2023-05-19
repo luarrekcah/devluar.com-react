@@ -7,16 +7,16 @@ import { styled } from "@mui/material/styles";
 import axios from "axios";
 import ProductItem from "./compsChild/ProductItem";
 
-const AllProducts = ({ onOpenModal }) => {
+const AllProducts = ({ onOpenModal }: any) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchValue, setSearchValue] = useState("");
 
-  const handleSearchChange = (event) => {
+  const handleSearchChange = (event: any) => {
     setSearchValue(event.target.value);
   };
 
-  const filteredProducts = products.filter((product) =>
+  const filteredProducts = products.filter((product: any) =>
     product.data.nome.toLowerCase().includes(searchValue.toLowerCase())
   );
 

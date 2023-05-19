@@ -40,5 +40,8 @@
     "react-type-animation": "^3.0.1",
     "styled-components": "^5.3.6",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.8"
   }
 }

@@ -6,16 +6,16 @@ import { Spinner } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import ProductItem from "./compsChild/ProductItem";
 
-import 'react-multi-carousel/lib/styles.css';
+import "react-multi-carousel/lib/styles.css";
 
-const ProductTabs = ({ onOpenModal }) => {
+const ProductTabs = ({ onOpenModal }: any) => {
   const [value, setValue] = useState(0);
   const [category, setCategory] = useState("Design Gráfico");
   const [width, setWidth] = useState(0);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (event: any, newValue: any) => {
     setValue(newValue);
     switch (newValue) {
       case 0:
@@ -47,24 +47,24 @@ const ProductTabs = ({ onOpenModal }) => {
         console.log(error);
       });
 
-      const handleWindowSizeChange = () => {
-        setWidth(window.innerWidth);
-      };
-  
-      // Check if `window` is defined before accessing it
-      if (typeof window !== 'undefined') {
-        setWidth(window.innerWidth);
-        window.addEventListener('resize', handleWindowSizeChange);
-      }
-  
-      // Clean up the event listener when the component is unmounted
-      return () => {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      };
-  }, []);
+    const handleWindowSizeChange = () => {
+      setWidth(window.innerWidth);
+    };
 
+    // Check if `window` is defined before accessing it
+    if (typeof window !== "undefined") {
+      setWidth(window.innerWidth);
+      window.addEventListener("resize", handleWindowSizeChange);
+    }
+
+    // Clean up the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+  
   const StyledTab = memo(
-    styled((props) => <Tab disableRipple {...props} />)(({ theme }) => ({
+    styled(Tab)(({ theme }) => ({
       textTransform: "none",
       fontWeight: theme.typography.fontWeightRegular,
       fontSize: theme.typography.pxToRem(15),
@@ -79,15 +79,7 @@ const ProductTabs = ({ onOpenModal }) => {
     }))
   );
 
-  const StyledTabs = styled((props) => (
-    <Tabs
-      centered
-      {...props}
-      TabIndicatorProps={{
-        children: <span className="MuiTabs-indicatorSpan" />,
-      }}
-    />
-  ))({
+  const StyledTabs = styled(Tabs)(({ theme }) => ({
     "& .MuiTabs-indicator": {
       display: "flex",
       justifyContent: "center",
@@ -98,7 +90,7 @@ const ProductTabs = ({ onOpenModal }) => {
       width: "100%",
       backgroundColor: "#FF0000",
     },
-  });
+  }));
 
   const isMobile = width <= 768;
 
@@ -139,6 +131,12 @@ const ProductTabs = ({ onOpenModal }) => {
     );
   }
 
+  interface ProductProps {
+    data: {
+      categoria: string;
+    };
+  }
+
   return (
     <div>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -162,7 +160,7 @@ const ProductTabs = ({ onOpenModal }) => {
           infinite
         >
           {products
-            .filter((item) => item.data.categoria === category)
+            .filter((item: ProductProps) => item.data.categoria === category)
             .map((item, index) => {
               return (
                 <ProductItem
