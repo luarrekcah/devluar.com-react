@@ -5,7 +5,7 @@ const FormContact = () => {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     const encodedMessage = encodeURIComponent(`Olá! Meu nome é ${name}. Mensagem: ${message}`);
     const url = `https://wa.me/556892402096?text=${encodedMessage}`;
