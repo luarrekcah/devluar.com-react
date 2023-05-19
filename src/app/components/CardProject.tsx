@@ -3,7 +3,14 @@ import PropTypes from "prop-types";
 import "./css/CardProject.css";
 import Image from "next/image";
 
-const CardProject = ({ title, description, image, link }) => {
+interface CardProjectProps {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+const CardProject = ({ title, description, image, link }: CardProjectProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
