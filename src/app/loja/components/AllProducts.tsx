@@ -74,7 +74,7 @@ const AllProducts = ({ onOpenModal }: any) => {
           return (
             <div style={{ margin: 5 }}>
               <ProductItem
-                key={index}
+                key={`id-${index}`}
                 item={item}
                 index={index}
                 onOpenModal={onOpenModal}

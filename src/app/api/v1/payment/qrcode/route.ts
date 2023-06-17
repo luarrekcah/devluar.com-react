@@ -7,10 +7,10 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-    const data: any = request.body;
+    const data: any = await request.json()
 
     if (data.email === "" || !data.email || data.prodId === "" || !data.prodId) {
-        return new Response('Missing data', {
+        return new Response(`Missing data\n\n${JSON.stringify(data)}`, {
             status: 404,
           });
     }

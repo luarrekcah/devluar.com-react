@@ -80,11 +80,21 @@ export default function Store() {
     });
 
     axios
-      .post("https://api.devluar.com/payment/qrcode", {
-        email: email,
-        prodId: productInfo?.key,
-      })
+      .post(
+        "/api/v1/payment/qrcode",
+        {
+          email: email,
+          prodId: productInfo?.key,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((r) => {
+        console.log(r);
+        console.log(productInfo);
         console.log(r.data);
 
         setPaymentData(r.data);
