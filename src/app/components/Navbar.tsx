@@ -67,7 +67,7 @@ const RNavbar = () => {
         <Container>
           <Navbar.Brand href="/#home">
             <Image
-              src={'/images/logo.png'}
+              src={"/images/logo.png"}
               width="37"
               height="30"
               className="d-inline-block align-top"
@@ -78,14 +78,17 @@ const RNavbar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav>
-              <Nav.Link href="/#">Início</Nav.Link>
-              <Nav.Link href="/#sobre">Sobre</Nav.Link>
-              <Nav.Link href="/#projetos">Projetos</Nav.Link>
-              <Nav.Link href="/#servicos">Serviços</Nav.Link>
               <Nav.Link href="/loja">Loja</Nav.Link>
-              <NavDropdown title="Curriculum" id="basic-nav-dropdown">
-              <NavDropdown.Item target='_blank' href="https://firebasestorage.googleapis.com/v0/b/rrprojects-7fa25.appspot.com/o/pessoal%2Fcurriculo.pdf?alt=media&token=19ef3571-d8c8-4ada-a0bb-87ccb1a534c4">English</NavDropdown.Item>
-            </NavDropdown>
+              <NavDropdown title="Sobre" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/#sobre">Bio</NavDropdown.Item>
+                <NavDropdown.Item href="/#projetos">Projetos</NavDropdown.Item>
+                <NavDropdown.Item href="/#servicos">Serviços</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="https://firebasestorage.googleapis.com/v0/b/rrprojects-7fa25.appspot.com/o/pessoal%2Fcurriculo.pdf?alt=media&token=19ef3571-d8c8-4ada-a0bb-87ccb1a534c4">
+                  English Curriculum
+                </NavDropdown.Item>
+              </NavDropdown>
+
               <Nav.Link href="https://wa.me/+556892402096">
                 <Button
                   variant="outline-danger"
