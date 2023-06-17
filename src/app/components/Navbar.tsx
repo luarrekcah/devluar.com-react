@@ -88,7 +88,6 @@ const RNavbar = () => {
                   English Curriculum
                 </NavDropdown.Item>
               </NavDropdown>
-
               <Nav.Link href="https://wa.me/+556892402096">
                 <Button
                   variant="outline-danger"
