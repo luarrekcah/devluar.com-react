@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import CardProject from "./CardProject";
 
@@ -27,25 +28,15 @@ const Projects = () => {
 
   const isMobile = width <= 768;
 
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 3,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 2,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
+    const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: isMobile ? 1 : 3,
+    slidesToScroll: 1,
+    autoplay: !isMobile,
   };
+
 
   const data = [
     {
@@ -155,23 +146,17 @@ const Projects = () => {
 
   return (
     <div>
-      <Carousel
-        responsive={responsive}
-        autoPlay={!isMobile ? true : false}
-        infinite
-      >
-        {data.map((i) => {
-          return (
-            <CardProject
-              key={i.title}
-              title={i.title}
-              description={i.description}
-              image={i.img}
-              link={i.link}
-            />
-          );
-        })}
-      </Carousel>
+      <Slider {...settings}>
+        {data.map((i) => (
+          <CardProject
+            key={i.title}
+            title={i.title}
+            description={i.description}
+            image={i.img}
+            link={i.link}
+          />
+        ))}
+      </Slider>
     </div>
   );
 };
