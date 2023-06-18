@@ -15,20 +15,20 @@ const Projects = () => {
     };
 
     // Check if `window` is defined before accessing it
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       setWidth(window.innerWidth);
-      window.addEventListener('resize', handleWindowSizeChange);
+      window.addEventListener("resize", handleWindowSizeChange);
     }
 
     // Clean up the event listener when the component is unmounted
     return () => {
-      window.removeEventListener('resize', handleWindowSizeChange);
+      window.removeEventListener("resize", handleWindowSizeChange);
     };
   }, []);
 
   const isMobile = width <= 768;
 
-    const settings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -36,7 +36,6 @@ const Projects = () => {
     slidesToScroll: 1,
     autoplay: !isMobile,
   };
-
 
   const data = [
     {
@@ -55,8 +54,7 @@ const Projects = () => {
       link: "https://advhiago.com",
     },
     {
-      img:
-        "/gifs/genios.gif",
+      img: "/gifs/genios.gif",
       title: "Gênios",
       description: "Site da Agência Gênios",
       techs: "Node.js, express, EJS e dependentes",
@@ -70,26 +68,23 @@ const Projects = () => {
       techs: "Node.js, Express, EJS e dependentes",
       link: "https://connect.dlwalt.com",
     },
-    
+
     {
       img: "/gifs/prospectweb.gif",
       title: "Prospect",
-      description:
-        "Landing Page para o Aplicativo Windows Prospect",
+      description: "Landing Page para o Aplicativo Windows Prospect",
       techs: "electron",
       link: "https://prospect.dlwalt.com",
     },
     {
       img: "/gifs/prospectwin.gif",
       title: "Prospect Windows",
-      description:
-        "Programa windows para acesso ao bot Prospect",
+      description: "Programa windows para acesso ao bot Prospect",
       techs: "electron",
       link: "https://prospect.dlwalt.com",
     },
     {
-      img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1035340313356681326/Sem_titulo-1.jpg",
+      img: "https://cdn.discordapp.com/attachments/883779286719422534/1035340313356681326/Sem_titulo-1.jpg",
       title: "GeekNote: Para nerds.",
       description:
         "Aplicativo android com diversas funções, como orçamentos, anotações dinâmicas específicas e outros. Disponível na Play Store a partir de 03/23",
@@ -106,8 +101,7 @@ const Projects = () => {
     },
 
     {
-      img:
-        "/gifs/mecard.gif",
+      img: "/gifs/mecard.gif",
       title: "MeCard",
       description:
         "Site com cards, para aqueles que desejam ter um tipo de perfil social, com diversos links, em um site, de forma bonita e elegante.",
@@ -115,8 +109,7 @@ const Projects = () => {
       link: "https://me-card.glitch.me/@/raul",
     },
     {
-      img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1035346356279193640/github.jpg",
+      img: "https://cdn.discordapp.com/attachments/883779286719422534/1035346356279193640/github.jpg",
       title: "D | Walt Gestão: Equipe",
       description:
         "Aplicativo para gestão de projetos solares, essa ferramenta é destinada aos funcionários das empresas cadastradas na plataforma D Walt Gestão Empresa.",
@@ -124,8 +117,7 @@ const Projects = () => {
       link: "https://play.google.com/store/apps/details?id=com.dlwalt.equipe",
     },
     {
-      img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1035346356279193640/github.jpg",
+      img: "https://cdn.discordapp.com/attachments/883779286719422534/1035346356279193640/github.jpg",
       title: "D | Walt Gestão: Cliente",
       description:
         "Aplicativo para gestão de projetos solares, essa ferramenta é destinada aos clientes das empresas cadastradas na plataforma D Walt Gestão Empresa.",
@@ -134,8 +126,7 @@ const Projects = () => {
     },
 
     {
-      img:
-        "https://cdn.discordapp.com/attachments/883779286719422534/1035346356279193640/github.jpg",
+      img: "https://cdn.discordapp.com/attachments/883779286719422534/1035346356279193640/github.jpg",
       title: "Inovart",
       description:
         "Projeto descontinuado pelo contratante (Falta de recursos para arcar com o valor do site)",
